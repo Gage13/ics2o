@@ -43,6 +43,9 @@ h2 {
 h3 {
 	font-family: Trebuchet MS;
 }
+p {
+	color: white;
+}
 
 img {
 	border: 1px solid black;
