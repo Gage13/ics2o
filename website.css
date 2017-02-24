@@ -6,7 +6,7 @@ div.container {
 header, footer {
 	padding: 1em;
 	color: white;
-	background-color: black;
+	background-color: rgb(90,89,89);
 	clear: left;
 	text-align: center;
 }
@@ -29,34 +29,43 @@ nav ul a{
 
 article {
 	margin-left: 170px;
-	border-left: 1px solid black;
+	border-left: 1px solid white;
 	padding: 1em;
 	overflow: hidden;
+	color: white;
 }
-body {
-	background-color: cyan;
-}
+
 h2 {
 	font-family: Courier New;
 }
-p {
-	color: brown;
-}
+
 img {
 	border: 1px solid black;
 	width: 340px;
 	height: 228px;
 }
+
 table {
+	width: 100%;
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
-	width: 100%;
 }
-td, th {
-	border: 1px solid black;
+
+th, td {
+	border: 1px solid white;
 	text-align: left;
 	padding: 8px;
 }
+
 tr:nth-child(even) {
-	background-color: gray;
+	background-color: #dddddd;
+	color: black;
+}
+
+html {
+	background: url(download.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
