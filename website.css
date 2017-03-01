@@ -57,6 +57,7 @@ table {
 	width: 60%;
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
+	color: yellow;
 }
 
 th, td {
