@@ -24,15 +24,22 @@ nav ul {
 	color: white;
 }
 
-nav ul a:hover{
+nav ul a:hover {
 	color: orange;
 }
+
 nav ul a:visited {
 	color: red;	
 }
+
 nav ul a:link {
 	color: green;	
 }
+
+nav ul a:active {
+	color: white;
+}
+	
 article {
 	margin-left: 170px;
 	border-left: 1px solid white;
