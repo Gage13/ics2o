@@ -24,19 +24,19 @@ nav ul {
 	color: white;
 }
 
-nav ul, a:hover {
+nav a:hover {
 	color: orange;
 }
 
-nav ul, a:visited {
+nav a:visited {
 	color: red;	
 }
 
-nav ul, a:link {
+nav a:link {
 	color: green;	
 }
 
-nav ul, a:active {
+nav a:active {
 	color: white;
 }
 	
