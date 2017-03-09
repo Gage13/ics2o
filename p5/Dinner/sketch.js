@@ -15,6 +15,7 @@ function draw() {
 	rect(95, 180, 210, 150, 140);
 
 	// lines of roasting a steak.
+	stroke(0, 0, 0);
 	strokeWeight(6);
 	line(175, 200, 240, 300);
 	line(130, 200, 190, 300);
