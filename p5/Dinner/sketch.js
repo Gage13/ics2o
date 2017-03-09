@@ -4,6 +4,9 @@ function setup() {
 
 function draw() {
 	background(186, 145, 20); // wooden table
+	
+	// Plate.
+	fill(255, 255, 255);
 	ellipse(200, 200, 350, 350); // plate
 	ellipse(200, 200, 300, 300); // bottom
 
