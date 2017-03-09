@@ -17,12 +17,28 @@ function draw() {
 	line(130, 200, 190, 300);
 	line(225, 200, 290, 300);
 
-	// potato 1
-	noStroke();
-	fill(194, 152, 45);
-	arc(180, 90, 160, 150, 1, 180);
+	// peas
+	strokeWeight(1);
+	fill(53, 140, 66);
+	ellipse(195, 115, 200, 130);
 
-	fill(255, 255, 255);
-	arc(180, 90, 160, 80, 1, 180);
+	// special peas.
+	fill(36, 166, 82);
 
+	// middle
+	ellipse(111,111,20,20);
+	ellipse(155, 111, 20, 20);
+	ellipse(195, 111, 20, 20);
+	ellipse(235, 111, 20, 20);
+	ellipse(275, 111, 20, 20);
+
+	// lower.
+	ellipse(155, 150, 20, 20);
+	ellipse(195, 150, 20, 20);
+	ellipse(235, 150, 20, 20);
+
+	// upper
+	ellipse(155, 70, 20, 20);
+	ellipse(195, 70, 20, 20);
+	ellipse(235, 70, 20, 20);
 }
