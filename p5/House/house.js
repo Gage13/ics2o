@@ -3,14 +3,14 @@ using JavaScript and its variables
 Dragi Plakalovic 2017-03-10
 Written on KhanAcademy */
 
-void setup() {
-  size(400, 400); // Canvas size.
+function setup() {
+  createCanvas(400, 400); // Canvas size.
  }
  
-void draw() {
-  int posX = 100;
-  int posY = 100;
-  int houseWidth = 100;
+function draw() {
+  var posX = 100;
+  var posY = 100;
+  var houseWidth = 100;
   
   // Background.
   background(112, 192, 235);
