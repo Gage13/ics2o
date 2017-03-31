@@ -3,47 +3,51 @@ using JavaScript and its variables
 Dragi Plakalovic 2017-03-10
 Written on KhanAcademy */
 
-function setup() {
-  createCanvas(400, 400); // Canvas size.
+void setup() {
+  size(400, 400); // Canvas size.
  }
  
-function draw() {
+void draw() {
+  int posX = 100;
+  int posY = 100;
+  int houseWidth = 100;
+  
   // Background.
   background(112, 192, 235);
   noStroke();
 
   // Sun.
   fill(247, 255, 0);
-  ellipse(325, 60, 90, 90);
+  ellipse(posX + 225, posY - 40, houseWidth - 10, houseWidth - 10);
 
   // Clouds.
   fill(255, 255, 255);
 
   /* Cloud One */
-  ellipse(100, 100, 35, 35);
-  ellipse(70, 100, 50, 50);
-  ellipse(40, 100, 35, 35);
+  ellipse(posX, posY, houseWidth - 65, houseWidth - 65);
+  ellipse(posX - 30, posY, houseWidth - 50, houseWidth - 50);
+  ellipse(posX - 60, posY, 35, 35);
 
   /* Cloud Two. */
-  ellipse(160, 40, 35, 35);
-  ellipse(130, 40, 50, 50);
-  ellipse(100, 40, 35, 35);
+  ellipse(posX + 60, posY - 60, houseWidth - 65, houseWidth - 65);
+  ellipse(posX + 30, posY - 60, houseWidth - 50, houseWidth - 50);
+  ellipse(posX, posY - 60, houseWidth - 65, houseWidth - 65);
 
   // House
   fill(255, 0, 0);
-  triangle(60, 187, 330, 187, 195, 83); // Roof
-
+  triangle(posX - 40, posY + (houseWidth - 13), posX + houseWidth + 130, posY + (houseWidth - 13), posX + (houseWidth - 5), posY - 17); // Roof.
+  
   fill(255, 255, 255);
-  rect(80, 187, 230, 162); // Base
+  rect(posX - 20, posY + 87, houseWidth + 130, houseWidth + 62); // Base
 
   fill(21, 122, 189);
-  rect(100, 206, 70, 50); // Left Window
-  rect(220, 206, 70, 50); // Right Window
+  rect(posX, posY + 106, 70, 50); // Left Window
+  rect(posX + 120, posY + 106, 70, 50); // Right Window
 
   fill(102, 51, 0);
-  rect(169, 267, 50, 82); // Door
+  rect(posX + 69, posY + 167, 50, 82); // Door
 
   // Ground
   fill(33, 252, 13);
-  rect(0, 350, 399, 50);
+  rect(posX - posX, posY + 250, 399, 50);
 }
