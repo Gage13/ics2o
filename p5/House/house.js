@@ -35,19 +35,19 @@ void draw() {
 
   // House
   fill(255, 0, 0);
-  triangle(posX - 40, posY + (houseWidth - 13), posX + houseWidth + 130, posY + (houseWidth - 13), posX + (houseWidth - 5), posY - 17); // Roof.
+  triangle(posX - (houseWidth - 60), posY + (houseWidth - 13), posX + houseWidth + 130, posY + (houseWidth - 13), posX + (houseWidth - 5), posY - 17); // Roof.
   
   fill(255, 255, 255);
   rect(posX - 20, posY + 87, houseWidth + 130, houseWidth + 62); // Base
 
   fill(21, 122, 189);
-  rect(posX, posY + 106, 70, 50); // Left Window
-  rect(posX + 120, posY + 106, 70, 50); // Right Window
+  rect(posX, posY + 106, houseWidth - 30, houseWidth - 50); // Left Window
+  rect(posX + 120, posY + 106, houseWidth - 30, houseWidth - 50); // Right Window
 
   fill(102, 51, 0);
-  rect(posX + 69, posY + 167, 50, 82); // Door
+  rect(posX + 69, posY + 167, houseWidth - 50, houseWidth - 18); // Door
 
   // Ground
   fill(33, 252, 13);
-  rect(posX - posX, posY + 250, 399, 50);
+  rect(posX - posX, posY + 250, houseWidth + 299, houseWidth - 50);
 }
