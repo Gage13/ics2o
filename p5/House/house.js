@@ -4,7 +4,7 @@ Dragi Plakalovic 2017-03-10
 Written on KhanAcademy */
 
 function setup() {
-  size(720, 400); // Canvas size.
+  createCanvas(720, 400); // Canvas size.
 }
 
 function draw() {
@@ -18,7 +18,7 @@ function draw() {
 
   // Sun.
   fill(247, 255, 0);
-  ellipse(posX*3 + 60, posY*0.6, houseWidth - 10, houseWidth - 10);
+  ellipse(posX*3 + 60, posY*0.6, houseWidth*0.9, houseWidth*0.9);
 
   // Clouds.
   fill(255, 255, 255);
@@ -53,7 +53,7 @@ function draw() {
 
   fill(21, 122, 189);
   rect(posX, posY*2 + 6, houseWidth*0.7, houseWidth/2); // Left Window
-  rect(posX + 120, posY + 106, houseWidth - 30, houseWidth - 50); // Right Window
+  rect(posX*2 + 20, posY*2 + 6, houseWidth*0.7, houseWidth/2); // Right Window
   
   fill(102, 51, 0);
   rect(posX*1.69, posY*2 + 67, houseWidth/2, houseWidth*0.82); // Door
