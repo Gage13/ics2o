@@ -3,11 +3,15 @@ using JavaScript and its variables
 Dragi Plakalovic 2017-03-10
 Written on KhanAcademy */
 
+// Creates canvas for the drawing.
 function setup() {
   createCanvas(730, 400); // Canvas size.
  }
- 
+
+// Function that draws on the canvas.
 function draw() {
+  
+  // Variables used in this drawing
   var posX = 100;
   var posY = 100;
   var houseWidth = 100;
@@ -46,6 +50,7 @@ function draw() {
 
   /* House number 1 */
   
+  // roof
   fill(255, 0, 0);
   triangle(posX - (houseWidth*0.4), posY + (houseWidth*0.87), posX + (houseWidth*2.3), posY + (houseWidth*0.87), posX + (houseWidth*0.95), posY*0.83); // Roof.
   
@@ -56,10 +61,10 @@ function draw() {
   fill(21, 122, 189);
   var windowSize = houseWidth/2;
   rect(posX, posY*2 + houseWidth*0.06, windowSize*1.4, windowSize); // Left Window
-  rect(posX*2 + (houseWidth*0.2), posY*2 + houseWidth*0.06, windowSize*1.4, windowSize); // Right Window
+  rect(posX + (houseWidth*1.20), posY*2 + houseWidth*0.06, windowSize*1.4, windowSize); // Right Window
 
   fill(102, 51, 0);
-  var doorSize = houseWidth/2
+  var doorSize = houseWidth/2;
   rect(posX + houseWidth*0.69, posY*2 + houseWidth*0.67, doorSize, doorSize*1.64); // Door
   
   /* House number 2 */
@@ -68,21 +73,20 @@ function draw() {
   var baseWidth = houseWidth*2.3;
   rect(posX*4 + houseWidth*0.2, posY + houseWidth*0.87, baseWidth, baseWidth*0.704); // Base
   
+  fill(255, 0, 0);
+  triangle(posX*4, posY + houseWidth*0.87, posX*4 + (houseWidth*2.7),  posY + (houseWidth*0.87), posX*4 + (houseWidth*1.3), posY*0.83);
+  
   /* Windows */
   fill(21, 122, 189);
   var window2Size= houseWidth*0.7;
   rect(posX*4 + (houseWidth*0.4), posY*2 + houseWidth*0.06, window2Size, window2Size*0.714); // Left Window
-  rect(posX*5 + (houseWidth*0.6), posY*2 + houseWidth*0.06, window2Size, window2Size*0.714); // Right Window
-  
-  /* Roof */
-  
-  fill(255, 0, 0);
-  triangle(posX*4, posY + houseWidth*0.87, posX*6 + (houseWidth*0.7),  posY + houseWidth*0.87, posX*5 + houseWidth*0.25, posY - houseWidth*0.);
+  rect(posX*4 + (houseWidth*1.6), posY*2 + houseWidth*0.06, window2Size, window2Size*0.714); // Right Window
   
   /* Door */
   
   fill(102, 51, 0);
-  rect(509, 267, 50, 82);
+  var door2Size = houseWidth/2;
+  rect(posX*4 + houseWidth*1.09, posY*2 + houseWidth*0.67, door2Size, door2Size*1.64);
 
   // Ground
   fill(33, 252, 13);
