@@ -16,10 +16,6 @@ function draw() {
   var posY = 100;
   var houseWidth = 100;
   
-  console.log(mouseY);
-  console.log(mouseX);
-  console.log(mouseY);
-  
   // Background.
   background(112, 192, 235);
   noStroke();
