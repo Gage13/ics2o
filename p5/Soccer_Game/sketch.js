@@ -1,4 +1,6 @@
-/* Bouncing ball
+/* Soccer game
+Originally written in Processing,
+translated into P5: 04-18-2017
 Dragi Plakalovic
 2017-13-04 */
 
