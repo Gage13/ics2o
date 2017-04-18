@@ -12,11 +12,11 @@ var centerY = 300;
 var velocityX = 0;
 var velocityY = 0;
 
-// Faces of the audience
-audience row1, row2, row3, row4, row5, row6;
+// Declare row* objects.
+var row1, row2, row3, row4, row5, row6;
 
 function setup() {
-  size(1140, 680); // Canvas
+  createCanvas(1140, 680); // Canvas
   
   row1 = new audience(18, 20, 10, 20, 20, 40);
   row2 = new audience(18, 50, 10, 20, 20, 40);
@@ -37,6 +37,7 @@ function draw() {
  
   fill(255, 204, 0);
   noStroke();
+  // Add a display of public
   row1.display();
   row2.display();
   row3.display();
@@ -111,7 +112,7 @@ function draw() {
 
 /*  */
 
-void mouseClicked() {
+function mouseIsClicked() {
   // Position the ball based on mouse coordinates
   centerX = mouseX;
   centerY = mouseY;
@@ -119,27 +120,17 @@ void mouseClicked() {
   velocityY = round(centerY/100);
 }
 
-class audience 
-{
-  int w; // single head width
-  int xpos; // head xposition
-  int h; // head height
-  int ypos ; // head yposition
-  int d; // single head distance
-  int t; // number of heads
- 
-  audience(int ixp, int iyp, int iw, int ih, int id, int it) {
-    w = iw;
-    xpos = ixp;
-    h = ih;
-    ypos = iyp;
-    d = id;
-    t = it;
-  }
- 
-  void display() {
-    for (int i=0; i<t; i++) {
-      ellipse(xpos+(i*(d+w)), ypos, w, h);
+function audience (ixp, iyp, iw, ih, id, it) {
+  this.w = iw;
+  this.xpos = ixp;
+  this.h = ih;
+  this.ypos = iyp;
+  this.d = id;
+  this.t = it;
+  
+  this.display() {
+    for (var i=0; i<this.t; i++) {
+      ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
     }
   }
 }
