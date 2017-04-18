@@ -110,9 +110,9 @@ function draw() {
   }
 }
 
-/*  */
+/* Position and speed of the ball */
 
-function mouseIsClicked() {
+function mouseClicked() {
   // Position the ball based on mouse coordinates
   centerX = mouseX;
   centerY = mouseY;
