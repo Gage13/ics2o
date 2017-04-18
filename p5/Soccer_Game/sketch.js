@@ -77,18 +77,18 @@ function draw() {
   
   /* Add nets to the goals */
   // Left Goal
-  for (int i = 10; i < 50; i += 10) {
+  for (var i = 10; i < 50; i += 10) {
     line(i, 424, i, 225);
   }
-  for (int j = 230; j < 430; j += 10) {
+  for (var j = 230; j < 430; j += 10) {
     line(0, j, 49, j);
   }
   
   // Right Goal
-  for (int k = 1089; k < 1139; k += 10) {
+  for (var k = 1089; k < 1139; k += 10) {
     line(k, 425, k, 227);
   }
-  for (int l = 230; l < 430; l += 10) {
+  for (var l = 230; l < 430; l += 10) {
     line(1090, l, 1139, l);
   }
   
