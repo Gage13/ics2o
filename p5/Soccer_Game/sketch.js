@@ -18,7 +18,7 @@ var velocityY = 0;
 var row1, row2, row3, row4, row5, row6;
 
 function setup() {
-  var myCanvas = createCanvas(1140, 680); // Canvas
+  var myCanvas = createCanvas(1350, 680); // Canvas
   myCanvas.parent('SoccerGame');
   
   row1 = new audience(18, 20, 10, 20, 20, 40);
