@@ -21,12 +21,12 @@ function setup() {
   var myCanvas = createCanvas(1350, 680); // Canvas
   myCanvas.parent('SoccerGame');
   
-  row1 = new audience(18, 20, 10, 20, 20, 40);
-  row2 = new audience(18, 50, 10, 20, 20, 40);
-  row3 = new audience(18, 80, 10, 20, 20, 40);
-  row4 = new audience(18, 605, 10, 20, 20, 40);
-  row5 = new audience(18, 635, 10, 20, 20, 40);
-  row6 = new audience(18, 666, 10, 20, 20, 40);
+  row1 = new audience(18, 20, 10, 20, 20, 45); // One row
+  row2 = new audience(18, 50, 10, 20, 20, 45);
+  row3 = new audience(18, 80, 10, 20, 20, 45);
+  row4 = new audience(18, 605, 10, 20, 20, 45);
+  row5 = new audience(18, 635, 10, 20, 20, 45);
+  row6 = new audience(18, 666, 10, 20, 20, 45);
 }
 
 function draw() {
@@ -35,8 +35,8 @@ function draw() {
   /* Audience */
   fill(102, 92, 92);
   stroke(102, 92, 92);
-  rect(0, 0, 1140, 97);
-  rect(0, 593, 1140, 97);
+  rect(0, 0, 1350, 97);
+  rect(0, 593, 1350, 97);
  
   fill(255, 204, 0);
   noStroke();
@@ -85,7 +85,7 @@ function draw() {
   stroke(255); // Outline
   strokeWeight(2);
   rect(0, 225, 50, 200); // Left
-  rect(1089, 225, 50, 200); // Right
+  rect(1289, 225, 50, 200); // Rightt
   
   /* Add nets to the goals */
   // Left Goal
