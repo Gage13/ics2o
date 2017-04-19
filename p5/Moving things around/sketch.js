@@ -25,7 +25,7 @@ function draw() {
 	ellipse(posX, posY, 30, 30); // Ball position and size.
 	
 	posY = posY + speedY; // Simulate ball fall by adding speed caused by gravity 
-	speedY = speedY++; // Speed increases as gravity pulls ball down
+	speedY = speedY + 1; // Speed increases as gravity pulls ball down
 	
 	// When ball hits ground, it will bounce up. The ball will slow down, due to gravity. Finally, it will fall down.
 	if (posY > height - 10) {
