@@ -138,7 +138,7 @@ function audience
     this.t = it;
   }
  
-  display = function() {
+  this.display = function() {
     for (var i=0; i<this.t; i++) {
       ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
     }
