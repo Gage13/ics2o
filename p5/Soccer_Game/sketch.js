@@ -127,16 +127,15 @@ function mouseClicked() {
   velocityY = round(centerY/100);
 }
 
-function audience 
-{
-  audience(int ixp, int iyp, int iw, int ih, int id, int it) {
-    this.w = iw;
-    this.xpos = ixp;
-    this.h = ih;
-    this.ypos = iyp;
-    this.d = id;
-    this.t = it;
-  }
+
+function audience(ixp, iyp, iw, ih, id, it) {
+   this.w = iw;
+   this.xpos = ixp;
+   this.h = ih;
+   this.ypos = iyp;
+   this.d = id;
+   this.t = it;
+ }
  
   this.display = function() {
     for (var i=0; i<this.t; i++) {
