@@ -56,19 +56,28 @@ function draw() {
   text(scoreB, 1100, 115); // scoreB print
   
   // Draw field lines
+  /* Huge play rect lines */
+  fill(0, 123, 12);
+  strokeWeight(5);
+  rect(55, 100, 1230, 490);
   /* Centre (Circle) */
   fill(0, 123, 12);
   stroke(255);
-  strokeWeight(20);
-  ellipse(570, 340, 200, 200);
+  strokeWeight(5);
+  ellipse(670, 340, 200, 200);
   /* Centre Line */
   fill(255);
   strokeWeight(5);
-  rect(565, 100, 10, 480);
-  /* Left Line*/
-  rect(285, 100, 10, 480);
-  /* Right Line */
-  rect(855, 100, 10, 480);
+  rect(670, 100, 2, 485);
+  /* Left Square (Big) */
+  strokeWeight(5);
+  line(55, 175, 290, 175);
+  line(55, 510, 290, 510);
+  rect(290, 175, 2, 335);
+  /* Right Square (Big) */
+  line(1060, 175, 1285, 175);
+  line(1060, 510, 1285, 510);
+  rect(1060, 175, 2, 335);
   
   // Make two goals
   
