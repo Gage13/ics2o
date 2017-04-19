@@ -142,4 +142,3 @@ function audience(ixp, iyp, iw, ih, id, it) {
       ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
     }
   }
-}
