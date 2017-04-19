@@ -1,6 +1,4 @@
-/* Soccer game
-Originally written in Processing,
-translated into P5: 04-18-2017
+/* Bouncing ball
 Dragi Plakalovic
 2017-13-04 */
 
@@ -14,12 +12,11 @@ var centerY = 300;
 var velocityX = 0;
 var velocityY = 0;
 
-// Declare row* objects.
+// Faces of the audience
 var row1, row2, row3, row4, row5, row6;
 
 function setup() {
-  var myCanvas = createCanvas(1350, 680); // Canvas
-  myCanvas.parent('SoccerGame');
+  size(1350, 680); // Canvas
   
   row1 = new audience(18, 20, 10, 20, 20, 45); // One row
   row2 = new audience(18, 50, 10, 20, 20, 45);
@@ -40,7 +37,6 @@ function draw() {
  
   fill(255, 204, 0);
   noStroke();
-  // Add a display of public
   row1.display();
   row2.display();
   row3.display();
@@ -53,7 +49,7 @@ function draw() {
   stroke(255); // Text colour
   strokeWeight(2); // Strength
   text(scoreA, 20, 115); // scoreA print
-  text(scoreB, 1100, 115); // scoreB print
+  text(scoreB, 1300, 115); // scoreB print
   
   // Draw field lines
   /* Huge play rect lines */
@@ -79,13 +75,14 @@ function draw() {
   line(1060, 510, 1285, 510);
   rect(1060, 175, 2, 335);
   
+  
   // Make two goals
   
   fill(0,123, 12); // Colour
   stroke(255); // Outline
   strokeWeight(2);
   rect(0, 225, 50, 200); // Left
-  rect(1289, 225, 50, 200); // Rightt
+  rect(1289, 225, 50, 200); // Right
   
   /* Add nets to the goals */
   // Left Goal
@@ -97,11 +94,11 @@ function draw() {
   }
   
   // Right Goal
-  for (var k = 1089; k < 1139; k += 10) {
+  for (var k = 1289; k < 1339; k += 10) {
     line(k, 425, k, 227);
   }
   for (var l = 230; l < 430; l += 10) {
-    line(1090, l, 1139, l);
+    line(1290, l, 1339, l);
   }
   
   //Draw he soccer ball.
@@ -122,8 +119,6 @@ function draw() {
   }
 }
 
-/* Position and speed of the ball */
-
 function mouseClicked() {
   // Position the ball based on mouse coordinates
   centerX = mouseX;
@@ -132,15 +127,18 @@ function mouseClicked() {
   velocityY = round(centerY/100);
 }
 
-function audience (ixp, iyp, iw, ih, id, it) {
-  this.w = iw;
-  this.xpos = ixp;
-  this.h = ih;
-  this.ypos = iyp;
-  this.d = id;
-  this.t = it;
-  
-  this.display = function() {
+function audience 
+{
+  audience(int ixp, int iyp, int iw, int ih, int id, int it) {
+    this.w = iw;
+    this.xpos = ixp;
+    this.h = ih;
+    this.ypos = iyp;
+    this.d = id;
+    this.t = it;
+  }
+ 
+  display = function() {
     for (var i=0; i<this.t; i++) {
       ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
     }
