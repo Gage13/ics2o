@@ -9,4 +9,4 @@ New updates? Yes (see below)
 Applied updates: Yes (April 19, 2017)
 Update: 1 (v1.0.0 --> v1.1.0)
 Playing field will be redrawn to be more identical to real soccer field. The thickness of the lines will be reduced and the playground will be enlarged to accomodate these changes. As a result, more audience will be designed.
-Released: April 19, 20187
+Released: April 19, 2017
