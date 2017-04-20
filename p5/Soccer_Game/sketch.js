@@ -13,7 +13,12 @@ var velocityX = 0;
 var velocityY = 0;
 
 // Faces of the audience
-var row1, row2, row3, row4, row5, row6;
+var row1; 
+var row2; 
+var row3; 
+var row4; 
+var row5; 
+var row6;
 
 function setup() {
   size(1350, 680); // Canvas
