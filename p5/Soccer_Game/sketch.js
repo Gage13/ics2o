@@ -135,10 +135,11 @@ function audience(ixp, iyp, iw, ih, id, it) {
    this.ypos = iyp;
    this.d = id;
    this.t = it;
- }
  
   this.display = function() {
     for (var i=0; i<this.t; i++) {
       ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
     }
   }
+}
+
