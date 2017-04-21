@@ -7,10 +7,10 @@ var scoreA = 0;
 var scoreB = 0;
 
 // Position and speed variables
-var centerX = 200;
-var centerY = 300;
-var velocityX = 0;
-var velocityY = 0;
+var centerX = 70;
+var centerY = 120;
+var velocityX = 5;
+var velocityY = 5;
 
 /* Faces of the audience */
 var row1; 
@@ -106,7 +106,7 @@ function draw() {
     line(1290, l, 1339, l);
   }
   
-  //Draw he soccer ball.
+  // Draw he soccer ball.
   fill(255);
   ellipse(centerX, centerY, 20, 20);
   
@@ -115,22 +115,22 @@ function draw() {
   centerY = centerY + velocityY;
   
   /* Control the ball */
-  if (centerX-20 < 0 || centerX+20 >= width) {
+  if (centerX-10 < 0 || centerX+10 >= width) {
     velocityX = -velocityX;
   }
   
-  if (centerY-20 < 100 || centerY+20 >= height-100) {
+  if (centerY-10 < 100 || centerY+10 >= height-100) {
     velocityY = -velocityY;
   }
 }
 
-function mouseClicked() {
+/* function mouseClicked() {
   // Position the ball based on mouse coordinates
   centerX = mouseX;
   centerY = mouseY;
   velocityX = round(centerX/100);
   velocityY = round(centerY/100);
-}
+} */
 
 
 function audience(ixp, iyp, iw, ih, id, it) {
@@ -147,4 +147,3 @@ function audience(ixp, iyp, iw, ih, id, it) {
     }
   }
 }
-
