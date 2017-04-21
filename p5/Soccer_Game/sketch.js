@@ -21,7 +21,7 @@ var row5;
 var row6; */
 
 function setup() {
-  size(1350, 680); // Canvas
+  createCanvas(1350, 680); // Canvas
   
   /* row1 = new audience(18, 20, 10, 20, 20, 45); // One row
   row2 = new audience(18, 50, 10, 20, 20, 45);
