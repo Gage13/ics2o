@@ -13,5 +13,5 @@ Playing field will be redrawn to be more identical to real soccer field. The thi
 Released: April 19, 2017
 
 Update: 2 (v1.1.0 --> v1.2.0)
-To make game real, ball serving was changed from mouse positioning to corner serving. Then, making goals is made possible by preventing ball from moving when it hit the goal and it is positioned at the top left corner. Speed is fixed now. Also, game now records scores.  
+To make game real, ball serving was changed from mouse positioning to corner serving. Then, making goals is made possible by preventing ball from moving when it hit the goal and it is positioned at the top left corner. Speed is fixed now. Also, game now records scores. New colouring scheme for the teams' scores and new message of win and loss for the player's team (i.e. Home Team) 
 Released: April 20, 2017
