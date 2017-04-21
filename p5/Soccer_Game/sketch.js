@@ -57,15 +57,18 @@ function draw() {
   row6.display(); // Display spectators in row 1
   
   /* Score Clock */
-  fill(255); // Text coloue
-  stroke(255); // Outline colour
-  strokeWeight(2); // Strength
+  fill(255, 0, 0); // Text colour
+  stroke(255, 0, 0); // Outline colour
+  textSize(25); // Strength
   text(scoreA, 20, 115); // Home print
+  fill(0, 0, 255); // Text colour
+  stroke(0, 0, 255); // Outline colour
   text(scoreB, 1300, 115); // Guest print
   
   // Draw field lines
   /* Huge play rect lines */
-  fill(0, 123, 12); 
+  fill(0, 123, 12);
+  stroke(255); // Colour  
   strokeWeight(5);
   rect(55, 100, 1230, 490);
   /* Centre (Circle) */
@@ -137,7 +140,26 @@ function draw() {
 	  centerY = 120;
   }
   
+  // If home team scores 10 goals
   if (scoreA >= 10) {
+	  fill(255, 0, 0); // Colour
+	  stroke(255, 0, 0); // Outline
+	  textSize(25); // Size
+	  text("You Won!", 675, 340); 
+  }
+  
+  // If statement that will record scores for guest team
+  if (centerX-10 <= 50) {
+	 scoreB++;
+	 centerX = 70;
+	 centerY = 120; 
+  }
+  
+  // If guest team scores 10 goals
+  if (scoreB >= 10) {
+	  fill(0, 0, 255); // Colour
+	  stroke(0, 0, 255); // Outline
+	  textSize(25); // Size
 	  text("You Won!", 675, 340);
   }
 }
