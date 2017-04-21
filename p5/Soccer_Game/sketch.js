@@ -12,23 +12,23 @@ var centerY = 300;
 var velocityX = 0;
 var velocityY = 0;
 
-// Faces of the audience
+/* Faces of the audience
 var row1; 
 var row2; 
 var row3; 
 var row4; 
 var row5; 
-var row6;
+var row6; */
 
 function setup() {
   size(1350, 680); // Canvas
   
-  row1 = new audience(18, 20, 10, 20, 20, 45); // One row
+  /* row1 = new audience(18, 20, 10, 20, 20, 45); // One row
   row2 = new audience(18, 50, 10, 20, 20, 45);
   row3 = new audience(18, 80, 10, 20, 20, 45);
   row4 = new audience(18, 605, 10, 20, 20, 45);
   row5 = new audience(18, 635, 10, 20, 20, 45);
-  row6 = new audience(18, 666, 10, 20, 20, 45);
+  row6 = new audience(18, 666, 10, 20, 20, 45); */
 }
 
 function draw() {
@@ -40,14 +40,14 @@ function draw() {
   rect(0, 0, 1350, 97);
   rect(0, 593, 1350, 97);
  
-  fill(255, 204, 0);
+  /* fill(255, 204, 0);
   noStroke();
   row1.display();
   row2.display();
   row3.display();
   row4.display();
   row5.display();
-  row6.display();
+  row6.display(); */
   
   /* Score variables */
   fill(255);
@@ -133,7 +133,7 @@ function mouseClicked() {
 }
 
 
-function audience(ixp, iyp, iw, ih, id, it) {
+/* function audience(ixp, iyp, iw, ih, id, it) {
    this.w = iw;
    this.xpos = ixp;
    this.h = ih;
@@ -146,5 +146,5 @@ function audience(ixp, iyp, iw, ih, id, it) {
       ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
     }
   }
-}
+} */
 
