@@ -5,12 +5,14 @@ Dragi Plakalovic
 // Score variables
 var scoreA = 0; // Initial home team score
 var scoreB = 0; // Initial guest team score
+var mySound; // Create sound variable (spectators' cheers)
 
 // Position and speed variables
 var centerX = 70; // Soccer Ball Initial Position X
 var centerY = 120; // Soccer Ball Initial Position Y
 var velocityX = 5; // Initial X speed of the ball
 var velocityY = 5; // Initial Y speed of the ball
+var cnv;
 
 /* Faces of the audience */
 var row1; // Row 1 audience
@@ -20,15 +22,21 @@ var row4; // Row 4 audience
 var row5; // Row 5 audience
 var row6; // Row 6 audience
 
-/* function preload() {
-	mySound = loadSound('Soccer Cheering'); 
-} */
+/*function preload() {
+	mySound = loadSound('Soccer Cheering.wav'); 
+}*/
+
+function centerCanvas() {
+	var x = (windowWidth - width) / 2;
+	var y = (windowHeight - height) / 2;
+	cnv.position(x, y);
+}
 
 function setup() {
   var myCanvas = createCanvas(1350, 680); // Canvas
   myCanvas.parent('SoccerGame'); // Position on the webpage
-  /* mySound.play();
-  mySound.setVolume(0.1); */
+  //mySound.play();
+  //mySound.setVolume(0.1);
   
   row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
   row2 = new audience(18, 50, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 2.
@@ -89,6 +97,14 @@ function draw() {
   line(1060, 175, 1285, 175);
   line(1060, 510, 1285, 510);
   rect(1060, 175, 2, 335);
+  /* Left Square (Small) */
+  line(55, 212, 202, 212);
+  line(55, 470, 200, 470);
+  rect(200, 215, 2, 255);
+  /* Right Square (Small) */
+  line(1150, 212, 1285, 211);
+  line(1150, 470, 1285, 470);
+  rect(1150, 215, 2, 255);
   
   
   // Make two goals
@@ -96,27 +112,28 @@ function draw() {
   fill(0,123, 12); // Colour
   stroke(255); // Outline
   strokeWeight(2); // Thickness of the goals
-  rect(0, 225, 50, 200); // Left
-  rect(1289, 225, 50, 200); // Right
-  
+  rect(0, 242, 50, 200); // Left
+  rect(1289, 245, 50, 200); // Right
+   
   /* Add nets to the goals */
+  
   // Left Goal
   for (var i = 10; i < 50; i += 10) {
-    line(i, 424, i, 225);
+    line(i, 441, i, 242);
   }
-  for (var j = 230; j < 430; j += 10) {
+  for (var j = 247; j < 447; j += 10) {
     line(0, j, 49, j);
   }
   
-  // Right Goal
-  for (var k = 1289; k < 1339; k += 10) {
-    line(k, 425, k, 227);
+  /* Right Goal */
+  for (var k = 1299; k < 1339; k += 10) {
+    line(k, 445, k, 247);
   }
-  for (var l = 230; l < 430; l += 10) {
+  for (var l = 250; l < 450; l += 10) {
     line(1290, l, 1339, l);
   }
   
-  // Draw he soccer ball.
+  /* Draw he soccer ball. */
   fill(255);
   ellipse(centerX, centerY, 20, 20);
   
@@ -133,7 +150,7 @@ function draw() {
     velocityY = -velocityY;
   }
   
-  // If statement that will record scores for home team
+  /* If statement that will record scores for home team */
   if (centerX-10 >= 1289) {
 	  scoreA++;
 	  centerX = 70;
@@ -164,16 +181,6 @@ function draw() {
   }
 }
 
-function mouseClicked() {
-	playerFoot();
-}
-
-var playerFoot = function() {
-	var posX = mouseX;
-	var posY = mouseY;
-	
-	ellipse(posX, posY, 30, 30);
-}
 // Define the object for drawing audience.
 function audience(ixp, iyp, iw, ih, id, it) {
    this.w = iw;
