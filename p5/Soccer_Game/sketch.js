@@ -26,12 +26,6 @@ var row6; // Row 6 audience
 	mySound = loadSound('Soccer Cheering.wav'); 
 }*/
 
-function centerCanvas() {
-	var x = (windowWidth - width) / 2;
-	var y = (windowHeight - height) / 2;
-	cnv.position(x, y);
-}
-
 function setup() {
   var myCanvas = createCanvas(1350, 680); // Canvas
   myCanvas.parent('SoccerGame'); // Position on the webpage
@@ -57,12 +51,12 @@ function draw() {
  
   fill(255, 204, 0); // Colour of spectators' heads
   noStroke(); // No head outline
-  row1.display(); // Display spectators in row 1
+  /* row1.display(); // Display spectators in row 1
   row2.display(); // Display spectators in row 1
   row3.display(); // Display spectators in row 1
   row4.display(); // Display spectators in row 1
   row5.display(); // Display spectators in row 1
-  row6.display(); // Display spectators in row 1
+  row6.display(); // Display spectators in row 1 */
   
   /* Score Clock */
   fill(255, 0, 0); // Text colour
@@ -83,29 +77,54 @@ function draw() {
   fill(0, 123, 12);
   stroke(255);
   strokeWeight(5);
-  ellipse(670, 340, 200, 200);
+  ellipse(672, 340, 200, 200);
+  // Small circle (center)
+  fill(255);
+  ellipse(672, 340, 20, 20);
   /* Centre Line */
   fill(255);
   strokeWeight(5);
   rect(670, 100, 2, 485);
+  // Arc line around the big left sqaure.
+  fill(0, 123, 12);
+  arc(290, 345, 80, 155, -1.52, 1.52);
   /* Left Square (Big) */
   strokeWeight(5);
   line(55, 175, 290, 175);
   line(55, 510, 290, 510);
   rect(290, 175, 2, 335);
+  // Small circle left
+  fill(255);
+  ellipse(220, 340, 20, 20);
+  // Arc line around the big right square
+  fill(0, 123, 12)
+  arc(1060, 345, 80, 155, 1.57, 4.68);
   /* Right Square (Big) */
   line(1060, 175, 1285, 175);
   line(1060, 510, 1285, 510);
   rect(1060, 175, 2, 335);
+  // Small circle (Right)
+  fill(255);
+  ellipse(1135, 340, 20, 20);
   /* Left Square (Small) */
-  line(55, 212, 202, 212);
-  line(55, 470, 200, 470);
-  rect(200, 215, 2, 255);
+  fill(0, 123, 12);
+  line(55, 212, 152, 212);
+  line(55, 470, 150, 470);
+  rect(150, 215, 2, 255);
   /* Right Square (Small) */
-  line(1150, 212, 1285, 211);
-  line(1150, 470, 1285, 470);
-  rect(1150, 215, 2, 255);
+  line(1200, 212, 1285, 211);
+  line(1200, 470, 1285, 470);
+  rect(1200, 215, 2, 255);
   
+  /* Corner circles */
+  // Upper Left Corner
+  arc(60, 105, 50, 50, 0, 1.57);
+  // Lower Left Corner
+  arc(1282, 105, 50, 50, 1.57, 3.14);
+  // Upper Right Corner
+  arc(60, 587, 50, 50, 4.71, 6.28)
+  // Lower Right Corner
+  arc(1282, 587, 50, 50, 3.14, 4.71);
   
   // Make two goals
   
@@ -125,7 +144,7 @@ function draw() {
     line(0, j, 49, j);
   }
   
-  /* Right Goal */
+  /* Right Goal*/
   for (var k = 1299; k < 1339; k += 10) {
     line(k, 445, k, 247);
   }
@@ -133,13 +152,13 @@ function draw() {
     line(1290, l, 1339, l);
   }
   
-  /* Draw he soccer ball. */
+  /* Draw he soccer ball.
   fill(255);
-  ellipse(centerX, centerY, 20, 20);
+  ellipse(centerX, centerY, 20, 20); */
   
-  // Move the ball
+  /* Move the ball
   centerX = centerX + velocityX;
-  centerY = centerY + velocityY;
+  centerY = centerY + velocityY; */
   
   /* Control the ball */
   if (centerX-10 < 0 || centerX+10 >= width) {
@@ -157,7 +176,7 @@ function draw() {
 	  centerY = 120;
   }
   
-  // If home team scores 10 goals
+  //If home team scores 10 goals
   if (scoreA >= 10) {
 	  fill(255, 0, 0); // Colour
 	  stroke(255, 0, 0); // Outline
@@ -181,7 +200,7 @@ function draw() {
   }
 }
 
-// Define the object for drawing audience.
+/* Define the object for drawing audience. */
 function audience(ixp, iyp, iw, ih, id, it) {
    this.w = iw;
    this.xpos = ixp;
