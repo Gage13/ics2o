@@ -32,9 +32,14 @@ function draw() {
 		speedY = -speedY;
 	}
 	
-	// Friction Ball
-	fill(204, 255, 153); // Ball colour.
-	ellipse(centerX, centerY, 30, 30); // Friction ball position and size.
+	// draw the car body
+	fill(255, 0, 115); // Car colour
+	rect(centerX - 100, centerY - 20, 100, 20); // Small car part
+	rect((centerX + 15) - 100, centerY - 40, 70, 40); // Large car part
+	// draw the wheels
+	fill(77, 66, 66); // Wheel colour
+	ellipse((centerX + 25) - 100, centerY, 24, 24); // Left wheel
+	ellipse((centerX + 75) - 100, centerY, 24, 24); // Right wheel
 	
 	centerX = centerX + velocityX; // Move the ball by adding velocity to it.
 	velocityX--; // To simulate friction, velocity of the ball drops by 1 pixel each time.
@@ -43,14 +48,4 @@ function draw() {
 	if (velocityX <= 0) {
 		velocityX = 0;
 	}
-	/* draw the car body
-	fill(255, 0, 115);
-	rect(x, 200, 100, 20);
-	rect(x + 15, 178, 70, 40);
-
-	// draw the wheels
-	fill(77, 66, 66);
-	ellipse(x + 25, 221, 24, 24);
-	ellipse(x + 75, 221, 24, 24); */
-
 }
