@@ -14,7 +14,8 @@ var centerY = 850; // Y position that remains the same
 var velocityX = 47.5; // Initial speed
 
 function setup() {
-	createCanvas(1280, 900);
+	var myCanvas = createCanvas(1280, 900);
+	myCanvas.parent('MoveThings');
 }
 
 function draw() {
