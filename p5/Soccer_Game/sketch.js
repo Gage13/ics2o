@@ -40,6 +40,18 @@ function setup() {
   row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
 }
 
+function player() {
+	fill(0, 0, 0);
+	noStroke();
+	rect(mouseX, mouseY, 15, 50);
+	rect(mouseX - 10, mouseY, 5, 25);
+	rect(mouseX + 20, mouseY, 5, 25);
+	rect(mouseX, mouseY + 55, 5, 25);
+	rect(mouseX + 10, mouseY + 55, 5, 25);
+	ellipse(mouseX + 7, mouseY - 15, 20, 20);
+}
+
+
 function draw() {
   background(0,123, 12); // Soccer field colour
    
@@ -168,6 +180,9 @@ function draw() {
   if (centerY-10 < 100 || centerY+10 >= height-100) {
     velocityY = -velocityY;
   }
+  
+   /* Add a player */
+   player();
   
   /* If statement that will record scores for home team */
   if (centerX-10 >= 1289) {
