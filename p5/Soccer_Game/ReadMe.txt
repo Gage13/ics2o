@@ -5,10 +5,10 @@ Thank you!
 
 First Version (v1.0.0) was released on April 15th, 2017
 
-Current Version of the Game: v1.2.2 (Previous versions: v1.0.0, v1.1.0, v1.2.0, v1.2.1)
+Current Version of the Game: v1.2.3 (Previous versions: v1.0.0, v1.1.0, v1.2.0, v1.2.1, v1.2.2)
 New updates? Yes (see below)
 
-Applied updates: Yes (April 19, 2017; April 21, 2017; April 22, 2017; April 23, 2017)
+Applied updates: Yes (April 19, 2017; April 21, 2017; April 22, 2017; April 23, 2017; April 26, 2017)
 
 Update: 1 (v1.0.0 --> v1.1.0)
 Playing field will be redrawn to be more identical to real soccer field. The thickness of the lines will be reduced and the playground will be enlarged to accomodate these changes. As a result, more audience will be designed.
@@ -25,3 +25,7 @@ Released: April 22, 2017
 Update: 4 (v1.2.1 --> v1.2.2)
 Another part of the promised update have been released today. The contents are added lining that make playground conform to the soccer field standards. As the key part that controls the ball movement is not ready yet, the ball and the public parts of the code have been deactivated until the said control part is not released.
 Released: April 23, 2017
+
+Update: 5 (v1.2.2 --> v1.2.3)
+This update was supposed to be v1.3.0 However, as most of its content was released in v1.2.1 and v1.2.2, its purpose doesn't have sense. This update changes the instructions of the game and includes audio.
+Released: April 26, 2017
