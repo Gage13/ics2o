@@ -10,9 +10,8 @@ var mySound; // Create sound variable (spectators' cheers)
 // Position and speed variables
 var centerX = 70; // Soccer Ball Initial Position X
 var centerY = 120; // Soccer Ball Initial Position Y
-var velocityX = 5; // Initial X speed of the ball
-var velocityY = 5; // Initial Y speed of the ball
-var cnv;
+var velocityX = 8; // Initial X speed of the ball
+var velocityY = 8; // Initial Y speed of the ball
 
 /* Faces of the audience */
 var row1; // Row 1 audience
@@ -22,15 +21,15 @@ var row4; // Row 4 audience
 var row5; // Row 5 audience
 var row6; // Row 6 audience
 
-/*function preload() {
+function preload() {
 	mySound = loadSound('Soccer Cheering.wav'); 
-}*/
+}
 
 function setup() {
   var myCanvas = createCanvas(1350, 680); // Canvas
   myCanvas.parent('SoccerGame'); // Position on the webpage
-  //mySound.play();
-  //mySound.setVolume(0.1);
+  mySound.play();
+  mySound.setVolume(0.1);
   
   row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
   row2 = new audience(18, 50, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 2.
@@ -63,12 +62,12 @@ function draw() {
  
   fill(255, 204, 0); // Colour of spectators' heads
   noStroke(); // No head outline
-  /* row1.display(); // Display spectators in row 1
+  row1.display(); // Display spectators in row 1
   row2.display(); // Display spectators in row 1
   row3.display(); // Display spectators in row 1
   row4.display(); // Display spectators in row 1
   row5.display(); // Display spectators in row 1
-  row6.display(); // Display spectators in row 1 */
+  row6.display(); // Display spectators in row 1
   
   /* Score Clock */
   fill(255, 0, 0); // Text colour
@@ -164,13 +163,13 @@ function draw() {
     line(1290, l, 1339, l);
   }
   
-  /* Draw he soccer ball.
+  /* Draw he soccer ball. */
   fill(255);
-  ellipse(centerX, centerY, 20, 20); */
+  ellipse(centerX, centerY, 20, 20);
   
-  /* Move the ball
+  /* Move the ball */
   centerX = centerX + velocityX;
-  centerY = centerY + velocityY; */
+  centerY = centerY + velocityY;
   
   /* Control the ball */
   if (centerX-10 < 0 || centerX+10 >= width) {
