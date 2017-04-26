@@ -22,7 +22,7 @@ var row5; // Row 5 audience
 var row6; // Row 6 audience
 
 function preload() {
-	mySound = loadSound('Soccer Cheering.wav'); 
+	mySound = loadSound('Soccer Cheering.mp4'); 
 }
 
 function setup() {
