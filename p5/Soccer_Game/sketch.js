@@ -207,7 +207,7 @@ function draw() {
 	// If statement that will record scores for guest team
 	if (centerX-10 <= 50) {
 		scoreB++;
-		centerX = 70;
+		centerX = 1289;
 		centerY = 120; 
 	}
   
