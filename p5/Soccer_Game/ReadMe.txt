@@ -27,5 +27,5 @@ Another part of the promised update have been released today. The contents are a
 Released: April 23, 2017
 
 Update: 5 (v1.2.2 --> v1.2.3)
-This update was supposed to be v1.3.0 However, as most of its content was released in v1.2.1 and v1.2.2, its purpose doesn't have sense. This update changes the instructions of the game and includes audio.
+This update was supposed to be v1.3.0 However, as most of its content was released in v1.2.1 and v1.2.2, its purpose doesn't have sense. This update changes the instructions of the game and includes audio file. The audio was present from v1.2.0, but some technical difficulties prevented it from being released. The problem is fixed by adding .htaccess file that adds support for .wav files
 Released: April 26, 2017
