@@ -22,6 +22,6 @@ function draw() {
 	}
 }
 
-/*function mouseIsPressed() {
-	size = random(10, 120);
-}*/
+function mouseIsPressed() {
+	carSize = random(10, 120);
+}
