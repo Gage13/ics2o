@@ -14,9 +14,16 @@ function setup() {
 
 function draw() {
 	background(255);
-	image(myImage, xPos, yPos, 100, 70);
+	var size = 100;
+	image(myImage, xPos, yPos, size, size*0.7);
 	xPos = xPos + speed;
 	if (xPos >= 640) {
 		xPos = 200;
 	}
+}
+
+function mouseIsPressed() {
+	var size = 100;
+	random(size);
+	return size;
 }
