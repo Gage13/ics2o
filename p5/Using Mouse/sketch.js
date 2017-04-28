@@ -15,7 +15,7 @@ function setup() {
 
 function draw() {
 	background(255);
-	image(myImage, xPos, yPos, size, size*0.7);
+	image(myImage, xPos, yPos);
 	xPos = xPos + speed;
 	if (xPos >= 640) {
 		xPos = 200;
