@@ -31,7 +31,7 @@ function draw() {
 	}
 }
 
-function mousePressed() {
+function mousePressed() { // Remember, mouseIsPressed is a boolean variable! Use mousePressed for function.
 	// When mouse is pressed, generate a round value for the car size.
 	carSize = round(random(10, 120));
 }
