@@ -22,6 +22,6 @@ function draw() {
 	}
 }
 
-function mouseIsPressed() {
+/*function mouseIsPressed() {
 	size = random(10, 120);
-}
+}*/
