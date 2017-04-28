@@ -23,5 +23,5 @@ function draw() {
 }
 
 function mouseIsPressed() {
-	carSize = random(10, 120);
+	carSize = round(random(10, 120));
 }
