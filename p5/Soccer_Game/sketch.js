@@ -184,8 +184,8 @@ function draw() {
 	if (mouseIsPressed) {
 		player();
 		if ((abs(centerX - mouseX) < 30) && (abs(centerY - mouseY) < 80)) {
-			velocityX = -round(round(1, 4));
-			velocityY = round(round(-3, 3));
+			velocityX = -velocityX;
+			velocityY = velocityY;
 		}
 	}
 	
