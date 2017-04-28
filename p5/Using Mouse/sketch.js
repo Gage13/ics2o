@@ -1,5 +1,5 @@
 var myImage;
-var xPos = 200;
+var xPos = 100;
 var yPos = 200;
 var speed = 3;
 
@@ -13,6 +13,7 @@ function setup() {
 }
 
 function draw() {
+	background(255);
 	image(myImage, xPos, yPos, 100, 70);
 	xPos = xPos + speed;
 	if (xPos >= 640) {
