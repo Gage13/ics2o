@@ -15,7 +15,7 @@ function setup() {
 
 function draw() {
 	background(255);
-	image(myImage, xPos, yPos, carSize, carSize*0.7);
+	image(myImage, xPos, yPos, carSize, round(carSize*0.7));
 	xPos = xPos + speed;
 	if (xPos >= 640) {
 		xPos = 200;
