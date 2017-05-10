@@ -21,19 +21,165 @@ Date: 2017-05-02 -->
 		<script language="javascript" type="text/javascript" src="sketch.js"></script>
 			
 		<!-- This CSS code will add style to this webpage. -->
-			
+		
 		<style>
-			body {
-				padding: 0;
-				margin: 0;
-				text-align: center;
-			}
+		div.container {
+			width: 100%;
+			border: 1px solid white;
+		}
+
+		header, footer {
+			padding: 1em;
+			color: white;
+			background-color: black;
+			clear: left;
+			text-align: center;
+		}
+
+		nav {
+			float: left;
+			max-width: 160px;
+			margin: 0;
+			padding: 1em;
+		}
+
+		nav ul {
+			list-style-type: none;
+			padding: 0;
+		}
+		   
+		nav ul a:link {
+			text-decoration: none;
+			color: red;
+		}
+		
+		nav ul a:visited {
+			color: cyan;
+		}
+		
+		nav ul a:hover {
+			color: yellow;
+		}
+		
+		nav ul a:active {
+			color: chartreuse;
+		}
+
+		article {
+			margin-left: 170px;
+			border-left: 1px solid white;
+			padding: 1em;
+			overflow: hidden;
+			color: Yellow;
+		}
+		
+		html {
+			background: url(background.jpg) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+		
+		h2 {
+			color: IndianRed;
+		}
+		
+		th, td {
+			color: white;
+		}
+		
+		table, th, td {
+			border: 1px solid white;
+		}
 		</style>
 	</head>
 		
 	<body>
-		<h1>Show yourself</h1>
-		<div id="Traffic_Lights"></div>
-		<!-- Here will be essay .-->
+		<div class="container">
+
+		<header>
+			<h1>How Traffic Lights Work And How They Influence Traffic Safety?</h1>
+		</header>
+		  
+		<nav>
+			<ul>
+				<li><a href="#">London</a></li>
+				<li><a href="#">Paris</a></li>
+				<li><a href="#">Tokyo</a></li>
+			</ul>
+		</nav>
+
+		<article>
+			<h2>Definition, usage and history</h2>
+			<p>
+			Traffic Lights, also known as traffic semaphore, traffic signals, traffic lamps, signal lights, stop lights, or robots (in South Africa)
+			are controlling devices used to control traffic flow. They are often positioned at traffic intersections and on pedestrian crossings.
+			However, they are used at road construction sites to control traffic.
+			</p>
+		  
+			<p>
+			First traffic lights appeared on public streets in London, United Kingdom of Great Britain and Ireland (today United Kingdom of Great Britain and Northern Ireland).
+			They were gas-lit and required a policeman-operator to control them. However, the lights were short-lived, as they exploded less than a month after the installment, killing the operator.
+			Despite this, the need for traffic lights arose during 1890s and Earnest Sirrine from Chicago patented the first automated traffic control system in 1910.
+			The new lights didn't need gasoline and it used words <strong>"STOP"</strong> and <strong>"PROCEED"</strong>. 
+			</p>
+		  
+			<p>
+			During the second half of 20th century, traffic lights dropped text and ceased to be manually operated. Automatic machines that need programming
+			have been on the rise. Also, the lights spread throughout the world and its first usage outside Europe and America was installation of traffic lights
+			in South Indian city of Chennai in 1953. The development of traffic lights was far from over, as in 1990 timers have been added for pedestrian to time their street crossings.
+			</p>
+		  
+			<h2>How do they work?</h2>
+		  
+			<p>
+			Traffic lights are high-voltage electric machines. They need programming, however, as they machines are not A.Is. Moreover, traffic lights
+			in Ontario are yellow boxes with red, yellow and green lights. The lights are placed across the intersection for each direction. Some countries 
+			place then in front of the intersection (European countries, for example).
+			</p>
+			
+			<p>
+			As we see, the sequence of traffic lights here is: 
+			<ol>
+				<li>Red</li>
+				<li>Green</li>
+				<li>Yellow</li>
+				<li>Red</li>
+			</ol>
+			This process is repeated again and again.
+			</p>
+		  
+			<div id="Traffic_Lights"></div>
+		  
+			<h2>Differences</h2>
+			<p>
+			Although they serve the same purpose of controlling the traffic, differences still exist.
+			In some jurisdictions, such as Québec, traffic lights are positioned horizontally rather than vertically in Ontario.
+			Also, their traffic lights have 2 red lights instead of one. <br> Moreover, traffic lights shapes are different.   
+			</p>
+		  
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Colourblind_traffic_signal.JPG/250px-Colourblind_traffic_signal.JPG" alt="Traffic Lights in NS">
+			
+			<p>
+			The sequence is also different:  
+			</p>
+		  
+			<table>
+				<tr>
+					<th>In Ontario</th>
+					<th>In Europe</th>
+				</tr>
+				<tr>
+					<td>Ontario has blinking red light</td>
+					<td>Only yellow and green lights can blink</td>
+				<tr>
+			</table>
+		  
+		</article>
+
+		<footer>Copyright &copy; Gage13</footer>
+
+		</div>
 	</body>
 </html>
