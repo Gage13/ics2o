@@ -3,8 +3,8 @@ Made by: Gage13
 Date: 2017-04-28 */
 
 // This are variables to draw a note slip
-var xPos = 100;
-var yPos = 100;
+var posX = 100;
+var posY = 100;
 var slipSize = 50;
 
 // This array will hold letters (initial and typed ones)
@@ -20,5 +20,5 @@ function draw() {
 	
 	// Create the note slip
 	fill(245,222,179);
-	rect(xPOs, yPos, slipSize, (slipSize*2));
+	rect(posX, posY, slipSize, (slipSize*2));
 }
