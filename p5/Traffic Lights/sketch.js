@@ -15,14 +15,15 @@ function setup() {
 }
 
 function draw() {
-    background(39, 245, 70);
+    background(39, 245, 70); // Background of the sketch
     
-    fill(237, 229, 9);
-    rect(60, 90, 70, 160);
-    rect(260, 90, 70, 160);
-    fill(0);
-    rect(80, 250, 30, 100);
-    rect(280, 250, 30, 100);
+	// Traffic Lights Poles
+    fill(237, 229, 9); // Top
+    rect(60, 90, 70, 160); // Left
+    rect(260, 90, 70, 160); // Right
+    fill(0); // Bottom
+    rect(80, 250, 30, 100); // Left 
+    rect(280, 250, 30, 100); // Right
 	
 	if (beginTimeCount === 0) {
 		lights();
