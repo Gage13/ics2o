@@ -59,7 +59,7 @@ function draw() {
 		yellow2On();
 	}
 	
-	if (millis() - beginTimeCount) >= 2000) {
+	if ((millis() - beginTimeCount) >= 2000) {
 		yellow2Off();
 		red2On();
 	}
