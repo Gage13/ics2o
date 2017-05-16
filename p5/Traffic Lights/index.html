@@ -149,20 +149,18 @@ Date: 2017-05-02 -->
 			</ol>
 			This process is repeated again and again.
 			</p>
-		  
-			<div id="Traffic_Lights"></div>
-		  
+		 
 			<h2>Differences</h2>
 			<p>
 			Although they serve the same purpose of controlling the traffic, differences still exist.
-			In some jurisdictions, such as Québec, traffic lights are positioned horizontally rather than vertically in Ontario.
+			In some jurisdictions, such as Québec, New Brunswick, and Prince Edward Island, traffic lights are positioned horizontally rather than vertically in Ontario.
 			Also, their traffic lights have 2 red lights instead of one. <br> Moreover, traffic lights shapes are different.   
 			</p>
 		  
 			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Colourblind_traffic_signal.JPG/250px-Colourblind_traffic_signal.JPG" alt="Traffic Lights in NS">
 			
 			<p>
-			The sequence is also different:  
+			The sequence \nd positioning are also different:  
 			</p>
 		  
 			<table>
@@ -171,11 +169,100 @@ Date: 2017-05-02 -->
 					<th>In Europe</th>
 				</tr>
 				<tr>
-					<td>Ontario has blinking red light</td>
+					<td>Ontario has both blinking red and yellow lights</td>
 					<td>Only yellow and green lights can blink</td>
+				</tr>
 				<tr>
+					<td>Traffic lights are positioned across the intersection</td>
+					<td>They are position before the intersection with some<br>traffic signs mounted on</td>
+				</tr>
 			</table>
-		  
+		  	
+			<h2>My code and animation for the traffic lights assignment</h2>
+			<pre>
+				/* Traffic Light Simulator
+				Made by Dragi Plakalovic
+				Date: 5/2/2017 */
+
+
+				// Set of variable that hold pin numbers for TL 1. (TL = Traffic Lights No. 1)
+				int red = 12;
+				int yellow = 10;
+				int green = 8;
+
+				// Set of variable that hold pin numbers for TL 2 (TL 2 = Traffic Lights No. 2)
+				int red2 = 6;
+				int yellow2 = 4;
+				int green2 = 2;
+
+				void setup() {
+					// Set following pins as output pins for TL 1
+					pinMode(red, OUTPUT); // Red for TL 1
+					pinMode(yellow, OUTPUT); // Yellow for TL 1
+					pinMode(green, OUTPUT); // Green for TL 1
+
+					// Set following pins as output pins for TL 2
+					pinMode(red2, OUTPUT); // Red for TL 2
+					pinMode(yellow2, OUTPUT); // Yellow for TL 2
+					pinMode(green2, OUTPUT); // Green for TL 2
+				}
+
+				void loop() {
+					/* Code for running lights on TL 1 */
+
+					// Red light 2
+					digitalWrite(red2, HIGH);
+					digitalWrite(yellow2, LOW);
+					digitalWrite(green2, LOW);
+					delay(1000);   
+
+					// Green light 1
+					digitalWrite(green, HIGH);
+					digitalWrite(red, LOW);
+					digitalWrite(yellow, LOW);
+					delay(11000); 
+
+					// Yellow light 1
+					digitalWrite(yellow, HIGH);
+					digitalWrite(red, LOW);
+					digitalWrite(green, LOW);
+					delay(3000);
+
+					// Red light 1
+					digitalWrite(red, HIGH);
+					digitalWrite(yellow, LOW);
+					digitalWrite(green, LOW);
+					delay(1000);         
+
+					/* Code for running lights on TL 2 */
+
+					// Red Light 2
+					digitalWrite(red2, HIGH); 
+					digitalWrite(yellow2, LOW);
+					digitalWrite(green2, LOW);
+					delay(3000);
+
+					// Green light 2
+					digitalWrite(red2, LOW); 
+					digitalWrite(yellow2, LOW);
+					digitalWrite(green2, HIGH);
+					delay(11000);
+
+					// Yellow light 2
+					digitalWrite(red2, LOW); 
+					digitalWrite(yellow2, HIGH);
+					digitalWrite(green2, LOW);
+					delay(3000);
+
+					// Red light 2
+					digitalWrite(red2, HIGH);
+					digitalWrite(yellow2, LOW);
+					digitalWrite(green2, LOW);
+					delay(2000);
+				}
+			</pre>
+			
+			<div id="Traffic_Lights"></div>
 		</article>
 
 		<footer>Copyright &copy; Gage13</footer>
