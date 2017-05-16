@@ -16,14 +16,6 @@ function setup() {
 
 function draw() {
     	background(39, 245, 70); // Background of the sketch
-    
-	// Traffic Lights Poles
-	fill(237, 229, 9); // Top
-	rect(60, 90, 70, 160); // Left
-   	rect(260, 90, 70, 160); // Right
-   	fill(0); // Bottom
-   	rect(80, 250, 30, 100); // Left 
-   	rect(280, 250, 30, 100); // Right
 	
 	if (beginTimeCount === 0) { // at the beginning of the sketch have the following:
 		lights(); //create traffic lights
