@@ -1,14 +1,21 @@
+/* Traffic Lights Animation in JavaScript based on Arduino code provided 
+Made by: Gage13
+Date: 2017-05-16 */
+
+// Variables that hold positions of the traffic lights
 var xPos = 95;
 var yPos = 115;
 var light = 40;
-var beginTimeCount = 0;
+var beginTimeCount = 0; // Variable that is used 
 
 function setup() {
-  createCanvas(450, 480);
+  var myCanvas = createCanvas(450, 480);
+	myCanvas.parent('Traffic_Lights');
+	
 }
 
 function draw() {
-	background(39, 245, 70);
+    background(39, 245, 70);
     
     fill(237, 229, 9);
     rect(60, 90, 70, 160);
