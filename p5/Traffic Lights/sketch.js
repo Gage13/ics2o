@@ -15,62 +15,47 @@ function setup() {
 }
 
 function draw() {
-    background(39, 245, 70); // Background of the sketch
+    	background(39, 245, 70); // Background of the sketch
     
 	// Traffic Lights Poles
-    fill(237, 229, 9); // Top
-    rect(60, 90, 70, 160); // Left
-    rect(260, 90, 70, 160); // Right
-    fill(0); // Bottom
-    rect(80, 250, 30, 100); // Left 
-    rect(280, 250, 30, 100); // Right
+	fill(237, 229, 9); // Top
+	rect(60, 90, 70, 160); // Left
+   	rect(260, 90, 70, 160); // Right
+   	fill(0); // Bottom
+   	rect(80, 250, 30, 100); // Left 
+   	rect(280, 250, 30, 100); // Right
 	
-	if (beginTimeCount === 0) {
-		lights();
-		red2On();
-		yellow2Off();
-		green2Off();
-		red1Off();
-		yellow1Off();
-		green1Off();
-		beginTimeCount = millis();
+	if (beginTimeCount === 0) { // at the beginning of the sketch have the following:
+		lights(); //create traffic lights
+		green1On(); //have green light #1 on
+		green2Off(); //have green light #2 off
+		yellow1Off(); //have yellow light #1 off
+		yellow2Off(); //have yellow light #2 off
+		red1Off(); //have red light #1 off
+		red2On(); //have red light #2 on
+		beginTimeCount = millis(); //start timer
 	}
-	
-	if ((millis() - beginTimeCount) >= 1000) {
-		red2Off();
-		green1On();
+	if ((millis() - beginTimeCount) >= 10000 ) { //when timer reaches 10 seconds do the following:
+		green1Off(); //turn green light #1 off
+		yellow1On(); //turn yellow light #1 on
 	}
-	
-	if ((millis() - beginTimeCount) >= 11000) {
-		green1Off();
-		yellow1On();
+	if ((millis() - beginTimeCount) >= 13000 ) { //when timer reaches 13 seconds do the following:
+		red1On(); //turn red light #1 on
+		yellow1Off(); //turn yellow light #1 off
+		red2On(); //turn red light #2 on
 	}
-	
-	if ((millis() - beginTimeCount) >= 3000) {
-		yellow1Off();
-		red1On();
+	if ((millis() - beginTimeCount) >= 15000 ) { //when timer reaches 15 seconds do the following:
+		red2Off(); //turn red light #2 off
+		green2On(); //turn green light #2 on
 	}
-	
-	// Traffic lights 2 sequence
-	if ((millis() - beginTimeCount) >= 1000) {
-		red2On();
-		green2Off();
-	}
-	
-	if ((millis() - beginTimeCount) >= 3000) {
-		red2Off();
-		green2On();
-	}
-	
-	if ((millis() - beginTimeCount) >= 11000) {
-		green2Off();
-		yellow2On();
-	}
-	
-	if ((millis() - beginTimeCount) >= 2000) {
-		yellow2Off();
-		red2On();
-	}
+	if ((millis() - beginTimeCount) >= 25000 ) { //when timer reaches 25 seconds do the following:
+		green2Off (); //turn green light #2 off
+		yellow2On (); //turn yellow light #2 on
+	}	
+	if ((millis() - beginTimeCount) >= 28000 ) { //when timer reaches 28 seconds do the following:
+		yellow2Off(); //turn yellow light # 2 off
+		red20n(); //turn red light #2 on
+	}	
 	
 	// Create functions
 	function red1On() {
