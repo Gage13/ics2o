@@ -1,7 +1,7 @@
 var xPos = 95;
 var yPos = 115;
 var light = 40;
-var timeCount = 0;
+var beginTimeCount = 0;
 
 function setup() {
   createCanvas(450, 480);
@@ -25,7 +25,7 @@ function draw() {
 		red1Off();
 		yellow1Off();
 		green1Off();
-		timeCount = millis();
+		beginTimeCount = millis();
 	}
 	
 	if ((millis() - beginTimeCount) >= 1000) {
