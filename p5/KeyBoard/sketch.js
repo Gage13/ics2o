@@ -36,20 +36,23 @@ function draw() {
 }
 
 function keyTyped() {
-	// Move the note when A is typed
+	// Move the note to the right when D is typed
 	if (key === 'd') {
 		posX++;
 	}
-	
+	// Move the note to the left when A is typed
 	if (key === 'a') {
 		posX--;
 	}
-	
+	// Move the note up when W is typed
 	if (key === 'w') {
 		posY--;
 	}
-	
+	// Move the note down when S is typed
 	if (key === 's') {
 		posY++;
 	}
+	// Prevent WASD from being inserted into the array and let others be typed
+	else {letters.push(key);}
+	return false;
 }
