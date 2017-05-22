@@ -39,7 +39,7 @@ function setup() {
 	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
 }
 
-function player() {
+function playerHome() {
 	fill(0, 0, 0);
 	noStroke();
 	rect(mouseX, mouseY, 15, 50);
@@ -50,6 +50,16 @@ function player() {
 	ellipse(mouseX + 7, mouseY - 15, 20, 20);
 }
 
+function playerGuest() {
+	fill(255, 255, 255);
+	noStroke();
+	rect(-(mouseX), -(mouseY), 15, 50);
+	rect(-(mouseX - 10), -(mouseY), 5, 25);
+	rect(-(mouseX + 20), -(mouseY), 5, 25);
+	rect(-(mouseX), -(mouseY + 55), 5, 25);
+	rect(-(mouseX + 10), -(mouseY + 55), 5, 25);
+	ellipse(-(mouseX + 7), -(mouseY - 15), 20, 20);	
+}
 
 function draw() {
 	background(0,123, 12); // Soccer field colour
@@ -84,44 +94,55 @@ function draw() {
 	stroke(255); // Colour  
 	strokeWeight(5);
 	rect(55, 100, 1230, 490);
+	
 	/* Centre (Circle) */
 	fill(0, 123, 12);
 	stroke(255);
 	strokeWeight(5);
 	ellipse(672, 340, 200, 200);
+	
 	// Small circle (center)
 	fill(255);
 	ellipse(672, 340, 20, 20);
+	
 	/* Centre Line */
 	fill(255);
 	strokeWeight(5);
 	rect(670, 100, 2, 485);
+	
 	// Arc line around the big left sqaure.
 	fill(0, 123, 12);
 	arc(290, 345, 80, 155, -1.52, 1.52);
 	/* Left Square (Big) */
+	
 	strokeWeight(5);
 	line(55, 175, 290, 175);
 	line(55, 510, 290, 510);
 	rect(290, 175, 2, 335);
+	
 	// Small circle left
 	fill(255);
 	ellipse(220, 340, 20, 20);
+	
 	// Arc line around the big right square
 	fill(0, 123, 12)
 	arc(1060, 345, 80, 155, 1.57, 4.68);
+	
 	/* Right Square (Big) */
 	line(1060, 175, 1285, 175);
 	line(1060, 510, 1285, 510);
 	rect(1060, 175, 2, 335);
+	
 	// Small circle (Right)
 	fill(255);
 	ellipse(1135, 340, 20, 20);
+	
 	/* Left Square (Small) */
 	fill(0, 123, 12);
 	line(55, 212, 152, 212);
 	line(55, 470, 150, 470);
 	rect(150, 215, 2, 255);
+	
 	/* Right Square (Small) */
 	line(1200, 212, 1285, 211);
 	line(1200, 470, 1285, 470);
@@ -182,7 +203,8 @@ function draw() {
   
 	/* Have a player to control the ball */
 	if (mouseIsPressed) {
-		player();
+		playerHome();
+		playerGuest();
 		if ((abs(centerX - mouseX) < 30) && (abs(centerY - mouseY) < 80)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
