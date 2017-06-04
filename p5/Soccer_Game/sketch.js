@@ -216,6 +216,11 @@ function draw() {
 		}
 	}
 	
+	function mouseMoved() {
+		xPos++;
+		yPos++;
+	}
+	
 	/* If statement that will record scores for home team */
 	if (centerX-10 >= 1289) {
 		scoreA++;
