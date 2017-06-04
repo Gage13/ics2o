@@ -1,4 +1,4 @@
-/* Bouncing ball
+/* Soccer game in HTML and p5 JavaScript
 Dragi Plakalovic
 2017-13-04 */
 
@@ -13,13 +13,16 @@ var centerY = 120; // Soccer Ball Initial Position Y
 var velocityX = 5; // Initial X speed of the ball
 var velocityY = 5; // Initial Y speed of the ball
 
-/* Faces of the audience */
+/* Faces of the audience
 var row1; // Row 1 audience
 var row2; // Row 2 audience
 var row3; // Row 3 audience
 var row4; // Row 4 audience
 var row5; // Row 5 audience
-var row6; // Row 6 audience
+var row6; // Row 6 audience*/
+
+var xPos = 200;
+var yPos = 300;
 
 function preload() {
 	mySound = loadSound("Soccer Cheering.wav"); 
@@ -27,39 +30,40 @@ function preload() {
 
 function setup() {
 	var myCanvas = createCanvas(1350, 680); // Canvas
-	myCanvas.parent('SoccerGame'); // Position on the webpage
+	myCanvas.parent("SoccerGame"); // Position on the webpage
 	mySound.play();
 	mySound.setVolume(0.1);
+	//frameRate(1);
 	  
-	row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
+	/*row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
 	row2 = new audience(18, 50, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 2.
 	row3 = new audience(18, 80, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 3.
 	row4 = new audience(18, 605, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 4.
 	row5 = new audience(18, 635, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 5.
-	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
+	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6. */
 }
 
-function playerHome() {
+/*function playerHome(xPos, yPos) {
 	fill(0, 0, 0);
 	noStroke();
-	rect(mouseX, mouseY, 15, 50);
-	rect(mouseX - 10, mouseY, 5, 25);
-	rect(mouseX + 20, mouseY, 5, 25);
-	rect(mouseX, mouseY + 55, 5, 25);
-	rect(mouseX + 10, mouseY + 55, 5, 25);
-	ellipse(mouseX + 7, mouseY - 15, 20, 20);
+	rect(xPos, yPos, 15, 50);
+	rect(xPos - 10, yPos, 5, 25);
+	rect(xPos + 20, yPos, 5, 25);
+	rect(xPos, yPos + 55, 5, 25);
+	rect(xPos + 10, yPos + 55, 5, 25);
+	ellipse(xPos + 7, yPos - 15, 20, 20);
 }
 
 function playerGuest() {
 	fill(255, 255, 255);
 	noStroke();
-	rect(-(mouseX), -(mouseY), 15, 50);
-	rect(-(mouseX - 10), -(mouseY), 5, 25);
-	rect(-(mouseX + 20), -(mouseY), 5, 25);
-	rect(-(mouseX), -(mouseY + 55), 5, 25);
-	rect(-(mouseX + 10), -(mouseY + 55), 5, 25);
-	ellipse(-(mouseX + 7), -(mouseY - 15), 20, 20);	
-}
+	rect(-(xPos), -(yPos), 15, 50);
+	rect(-(xPos - 10), -(yPos), 5, 25);
+	rect(-(xPos + 20), -(yPos), 5, 25);
+	rect(-(xPos), -(yPos + 55), 5, 25);
+	rect(-(xPos + 10), -(yPos + 55), 5, 25);
+	ellipse(-(xPos + 7), -(yPos - 15), 20, 20);	
+}*/
 
 function draw() {
 	background(0,123, 12); // Soccer field colour
@@ -125,7 +129,7 @@ function draw() {
 	ellipse(220, 340, 20, 20);
 	
 	// Arc line around the big right square
-	fill(0, 123, 12)
+	fill(0, 123, 12);
 	arc(1060, 345, 80, 155, 1.57, 4.68);
 	
 	/* Right Square (Big) */
@@ -154,7 +158,7 @@ function draw() {
 	// Lower Left Corner
 	arc(1282, 105, 50, 50, 1.57, 3.14);
 	// Upper Right Corner
-	arc(60, 587, 50, 50, 4.71, 6.28)
+	arc(60, 587, 50, 50, 4.71, 6.28);
 	// Lower Right Corner
 	arc(1282, 587, 50, 50, 3.14, 4.71);
   
@@ -169,18 +173,18 @@ function draw() {
 	/* Add nets to the goals */
 	
 	// Left Goal
-	for (var i = 10; i < 50; i += 10) {
+	for(var i = 10; i < 50; i += 10) {
 		line(i, 441, i, 242);
 	}
-	for (var j = 247; j < 447; j += 10) {
+	for(var j = 247; j < 447; j += 10) {
 		line(0, j, 49, j);
 	}
   
 	/* Right Goal*/
-	for (var k = 1299; k < 1339; k += 10) {
+	for(var k = 1299; k < 1339; k += 10) {
 		line(k, 445, k, 247);
 	}
-	for (var l = 250; l < 450; l += 10) {
+	for(var l = 250; l < 450; l += 10) {
 		line(1290, l, 1339, l);
 	}
   
@@ -201,21 +205,23 @@ function draw() {
 		velocityY = -velocityY;
 	}
   
-	/* Have a player to control the ball */
+	/* Have a player to control the ball
 	if (mouseIsPressed) {
-		playerHome();
+		playerHome(xPos, yPos);
 		playerGuest();
-		if ((abs(centerX - mouseX) < 30) && (abs(centerY - mouseY) < 80)) {
+		if ((abs(centerX - xPos) <= 30) && (abs(centerY - xPos) <= 80)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
+			mySound.stop();
 		}
-	}
+	}*/
 	
 	/* If statement that will record scores for home team */
 	if (centerX-10 >= 1289) {
 		scoreA++;
 		centerX = 70;
 		centerY = 120;
+		mySound.play();
 	}
   
 	//If home team scores 10 goals
@@ -224,6 +230,7 @@ function draw() {
 		stroke(255, 0, 0); // Outline
 		textSize(25); // Size
 		text("You Won!", 675, 340); 
+		noLoop();
 	}
   
 	// If statement that will record scores for guest team
@@ -231,6 +238,7 @@ function draw() {
 		scoreB++;
 		centerX = 1289;
 		centerY = 120; 
+		mySound.play();
 	}
   
 	// If guest team scores 10 goals
@@ -239,10 +247,14 @@ function draw() {
 		stroke(0, 0, 255); // Outline
 		textSize(25); // Size
 		text("You Lost!", 675, 340);
+		noLoop();
 	}
+	
+	/*print("Ball X position " + centerX);
+	print("Ball Y position " + centerY);*/
 }
 
-/* Define the object for drawing audience. */
+/* Define the object for drawing audience.
 function audience(ixp, iyp, iw, ih, id, it) {
 	this.w = iw;
 	this.xpos = ixp;
@@ -257,4 +269,4 @@ function audience(ixp, iyp, iw, ih, id, it) {
 		ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
 		}
 	}
-}
+}*/
