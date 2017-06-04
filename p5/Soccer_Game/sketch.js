@@ -21,8 +21,11 @@ var row4; // Row 4 audience
 var row5; // Row 5 audience
 var row6; // Row 6 audience
 
+// Player positions
 var xPos = 200;
 var yPos = 300;
+var posX = 1289;
+var posY = 300;
 
 function preload() {
 	mySound = loadSound("Soccer Cheering.wav"); 
@@ -54,15 +57,15 @@ function playerHome(xPos, yPos) {
 	ellipse(xPos + 7, yPos - 15, 20, 20);
 }
 
-function playerGuest() {
+function playerGuest(posX, posY) {
 	fill(255, 255, 255);
 	noStroke();
-	rect(-(xPos), -(yPos), 15, 50);
-	rect(-(xPos - 10), -(yPos), 5, 25);
-	rect(-(xPos + 20), -(yPos), 5, 25);
-	rect(-(xPos), -(yPos + 55), 5, 25);
-	rect(-(xPos + 10), -(yPos + 55), 5, 25);
-	ellipse(-(xPos + 7), -(yPos - 15), 20, 20);	
+	rect(posX, posY, 15, 50);
+	rect(posX - 10, posY, 5, 25);
+	rect(posX + 20, posY, 5, 25);
+	rect(posX, posY + 55, 5, 25);
+	rect(posX + 10, posY + 55, 5, 25);
+	ellipse(posX + 7, posY - 15, 20, 20);	
 }
 
 function draw() {
@@ -179,7 +182,7 @@ function draw() {
 	for(var j = 247; j < 447; j += 10) {
 		line(0, j, 49, j);
 	}
-  
+ 
 	/* Right Goal*/
 	for(var k = 1299; k < 1339; k += 10) {
 		line(k, 445, k, 247);
@@ -207,7 +210,7 @@ function draw() {
   
 	// Have a player to control the ball
 	playerHome(xPos, yPos);
-	playerGuest();
+	playerGuest(PosX, PosY);
 	if ((abs(centerX - xPos) <= 30) && (abs(centerY - xPos) <= 80)) {
 		velocityX = -velocityX;
 		velocityY = velocityY;
