@@ -216,16 +216,16 @@ function draw() {
 	
 	// Control the player
 	if (keyIsDown(UP_ARROW)) {
-		yPos-=5;
+		yPos-=velocityY;
 	}
 	if (keyIsDown(DOWN_ARROW)) {
-		yPos+=5;
+		yPos+=velocityY;
 	}
 	if (keyIsDown(LEFT_ARROW)) {
-		xPos-=5;
+		xPos-=velocityX;
 	}
 	if(keyIsDown(RIGHT_ARROW)) {
-		xPos+=5;
+		xPos+=velocityX;
 	}
 	
 	/* If statement that will record scores for home team */
