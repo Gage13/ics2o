@@ -1,49 +1,71 @@
+<!-- Webpage that hosts video game written in JavaScript
+Made by: Gage13 (a.k.a Dragi Plakalovic) Date: June 3rd, 2017-->
 <!DOCTYPE html>
 <html>
-  <head>
+	<head>
   
-    <!-- AdFender script begin --><script type="text/javascript" src="http://gc.kis.scr.kaspersky-labs.com/9467E89D-F300-B74E-A935-CAD91E3CF417/main.js" charset="UTF-8"></script><script type='text/javascript' src='http://local.adfender.com/adfender/elemhide.js'></script><!-- AdFender script end -->
+		<!-- AdFender script begin --><script type="text/javascript" src="http://gc.kis.scr.kaspersky-labs.com/9467E89D-F300-B74E-A935-CAD91E3CF417/main.js" charset="UTF-8"></script>
+		<script type='text/javascript' src='http://local.adfender.com/adfender/elemhide.js'></script><!-- AdFender script end -->
 
-    <meta charset="UTF-8">
+		<meta charset="UTF-8">
     
-    <title>Soccer Game in JavaScript</title>
-    
-    <link rel="icon" type="image/x-icon" src="soccer-ball.jpg">
+		<title>Soccer Game in JavaScript</title>
+		
+		<!-- Add image to the window bar -->
+		<link rel="icon" type="image/x-icon" href="soccer-ball.jpg">
 
-    <script language="javascript" type="text/javascript" src="../libraries/p5.js"></script>
+		<script language="javascript" type="text/javascript" src="../libraries/p5.js"></script>
 
-    <!-- Uncomment following lines to include more p5 libraries. -->
+		<!-- Uncomment following lines to include more p5 libraries. -->
 
-    <!--<script language="javascript" src="../libraries/p5.dom.js"></script>-->
+		<!--<script language="javascript" src="../libraries/p5.dom.js"></script>-->
 
-    <script language="javascript" src="../libraries/p5.sound.js"></script>
+		<script language="javascript" src="../libraries/p5.sound.js"></script>
+	
+		<script language="javascript" type="text/javascript" src="sketch.js"></script>
 
-    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+		<!-- The style code removes default padding and style. -->
 
-    <!-- The style code removes default padding and style. -->
-
-    <style>
-      body {
-        padding: 50; 
-        margin: 50;
-        zoom: 0.9;
-      }
-    </style>
-
-  </head>
+		<style type="text/css">
+		body {
+			padding: 50; 
+			margin: 50;
+			zoom: 0.9;
+		}
+		table, th, td {
+			width: 60%;
+			border: 1px solid black;
+		}
+		</style>
+		
+	</head>
   
-  <body>
-    <h1>Soccer video game</h1>
-    <p>Use mouse to position the player to kick the ball, while mouse is being pressed</p>
-    <div id="SoccerGame"></div>
-    <p>View game's source code <a href="sketch.js">here</a></p>
-    <p><a href="ReadMe.txt">Version Log and ReadMe files</a></p>
-    <p>Note: Due to size of audio file, game may be slow during loading time.</p>
-    
-    <table>
-      <tr>
-        <th>Requirements</th>
-      </tr>
-    </table>
-  </body>
+	<body>
+		<h1>Soccer video game</h1>
+		<p>Use the mouse to move your players to play this soccer game.</p>
+		
+		<table>
+			<tr>
+				<th>Description</th>
+				<th>Instructions</th>
+			</tr>
+			<tr>
+				<td>
+				My game, titled as SoccerGame, will be like a small soccer game (football in UK) played between two teams, Canada and Northern Ireland.
+				The game will involve user controlling one team of player(home), and computer controlling the guest team. The user controls consist of mouse movements
+				but in soon future controls will switch to keyboard ones. The game will begin with fixed team positions that are moved with input from user. There is score counter,
+				that records goals made by either teams. The first team to reach 10 goals wins and game ends. A message will be shown based on scores. Moreover, the screen will have a soccer field
+				and it will have audience. Plus, sounds are included in this game to give effect of real game of soccer.
+				</td>
+				<td>Using the mouse (later keyboard) you'll control the movement of home team, while computer will move the guest team using counter-movements from user. The goal is to score 10 goals 
+				while avoiding opponent team. To win the game, you need to score 10 goals. If you want to pause press Space. To resume, press Space again. Good luck!</td>
+			</tr>
+		</table>
+		<br>
+		<div id="SoccerGame"></div>
+		<p>View game's source code <a href="sketch.js">here</a></p>
+		<p><a href="ReadMe.txt">Version Log and ReadMe files</a></p>
+		
+		
+	</body>
 </html>
