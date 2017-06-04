@@ -214,6 +214,20 @@ function draw() {
 		mySound.stop();
 	}
 	
+	// Control the player
+	if (keyIsDown(UP_ARROW)) {
+		yPos--;
+	}
+	if (keyIsDown(DOWN_ARROW)) {
+		yPos++;
+	}
+	if (keyIsDown(LEFT_ARROW)) {
+		xPos--;
+	}
+	if(keyIsDown(RIGHT_ARROW)) {
+		xPos++;
+	}
+	
 	/* If statement that will record scores for home team */
 	if (centerX-10 >= 1289) {
 		scoreA++;
@@ -250,11 +264,6 @@ function draw() {
 	
 	/*print("Ball X position " + centerX);
 	print("Ball Y position " + centerY);*/
-}
-
-function mouseMoved() {
-	xPos++;
-	yPos++;
 }
 
 // Define the object for drawing audience.
