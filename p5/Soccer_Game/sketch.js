@@ -214,11 +214,6 @@ function draw() {
 		mySound.stop();
 	}
 	
-	function mouseMoved() {
-		xPos++;
-		yPos++;
-	}
-	
 	/* If statement that will record scores for home team */
 	if (centerX-10 >= 1289) {
 		scoreA++;
@@ -255,6 +250,11 @@ function draw() {
 	
 	/*print("Ball X position " + centerX);
 	print("Ball Y position " + centerY);*/
+}
+
+function mouseMoved() {
+	xPos++;
+	yPos++;
 }
 
 // Define the object for drawing audience.
