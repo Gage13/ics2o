@@ -206,7 +206,7 @@ function draw() {
 	}
   
 	// Have a player to control the ball
-	if (mouseIsPressed) {
+	/*if (mouseIsPressed) {
 		playerHome(xPos, yPos);
 		playerGuest();
 		if ((abs(centerX - xPos) <= 30) && (abs(centerY - xPos) <= 80)) {
@@ -214,11 +214,12 @@ function draw() {
 			velocityY = velocityY;
 			mySound.stop();
 		}
-	}
+	}*/
 	
 	function mouseMoved() {
 		xPos++;
 		yPos++;
+		playerHome(xPos, yPos);
 	}
 	
 	/* If statement that will record scores for home team */
