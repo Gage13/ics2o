@@ -13,13 +13,13 @@ var centerY = 120; // Soccer Ball Initial Position Y
 var velocityX = 5; // Initial X speed of the ball
 var velocityY = 5; // Initial Y speed of the ball
 
-/* Faces of the audience
+// Faces of the audience
 var row1; // Row 1 audience
 var row2; // Row 2 audience
 var row3; // Row 3 audience
 var row4; // Row 4 audience
 var row5; // Row 5 audience
-var row6; // Row 6 audience*/
+var row6; // Row 6 audience
 
 var xPos = 200;
 var yPos = 300;
@@ -35,12 +35,12 @@ function setup() {
 	mySound.setVolume(0.1);
 	//frameRate(1);
 	  
-	/*row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
+	row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
 	row2 = new audience(18, 50, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 2.
 	row3 = new audience(18, 80, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 3.
 	row4 = new audience(18, 605, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 4.
 	row5 = new audience(18, 635, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 5.
-	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6. */
+	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
 }
 
 /*function playerHome(xPos, yPos) {
@@ -254,7 +254,7 @@ function draw() {
 	print("Ball Y position " + centerY);*/
 }
 
-/* Define the object for drawing audience.
+// Define the object for drawing audience.
 function audience(ixp, iyp, iw, ih, id, it) {
 	this.w = iw;
 	this.xpos = ixp;
@@ -269,4 +269,4 @@ function audience(ixp, iyp, iw, ih, id, it) {
 		ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
 		}
 	}
-}*/
+}
