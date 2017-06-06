@@ -5,13 +5,13 @@ Dragi Plakalovic
 // Score variables
 var scoreA = 0; // Initial home team score
 var scoreB = 0; // Initial guest team score
-var mySound; // Create sound variable (spectators' cheers)
+//var mySound; // Create sound variable (spectators' cheers)
 
 // Position and speed variables
 var centerX = 70; // Soccer Ball Initial Position X
 var centerY = 120; // Soccer Ball Initial Position Y
-var velocityX = 5; // Initial X speed of the ball
-var velocityY = 5; // Initial Y speed of the ball
+var velocity = 5; // Initial speed of the ball
+var p1Vel = 5; // Speed of the home player
 
 // Faces of the audience
 var row1; // Row 1 audience
@@ -36,7 +36,6 @@ function setup() {
 	myCanvas.parent("SoccerGame"); // Position on the webpage
 	mySound.play();
 	mySound.setVolume(0.1);
-	//frameRate(1);
 	  
 	row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
 	row2 = new audience(18, 50, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 2.
@@ -68,33 +67,7 @@ function playerGuest(posX, posY) {
 	ellipse(posX + 7, posY - 15, 20, 20);	
 }
 
-function draw() {
-	background(0,123, 12); // Soccer field colour
-   
-	/* Audience */
-	fill(102, 92, 92); // Colour of the audience's sitting platforms
-	stroke(102, 92, 92); // Border of the audience's platforms
-	rect(0, 0, 1350, 97); // Platform 1
-	rect(0, 593, 1350, 97); // Platform 2
- 
-	fill(255, 204, 0); // Colour of spectators' heads
-	noStroke(); // No head outline
-	row1.display(); // Display spectators in row 1
-	row2.display(); // Display spectators in row 1
-	row3.display(); // Display spectators in row 1
-	row4.display(); // Display spectators in row 1
-	row5.display(); // Display spectators in row 1
-	row6.display(); // Display spectators in row 1
-  
-	/* Score Clock */
-	fill(255, 0, 0); // Text colour
-	stroke(255, 0, 0); // Outline colour
-	textSize(25); // Strength
-	text(scoreA, 20, 115); // Home print
-	fill(0, 0, 255); // Text colour
-	stroke(0, 0, 255); // Outline colour
-	text(scoreB, 1300, 115); // Guest print
-  
+function arenaField() {
 	// Draw field lines
 	/* Huge play rect lines */
 	fill(0, 123, 12);
@@ -120,8 +93,8 @@ function draw() {
 	// Arc line around the big left sqaure.
 	fill(0, 123, 12);
 	arc(290, 345, 80, 155, -1.52, 1.52);
-	/* Left Square (Big) */
 	
+	/* Left Square (Big) */
 	strokeWeight(5);
 	line(55, 175, 290, 175);
 	line(55, 510, 290, 510);
@@ -194,58 +167,62 @@ function draw() {
 	/* Draw he soccer ball. */
 	fill(255);
 	ellipse(centerX, centerY, 20, 20);
+	
+	/* Score Clock */
+	fill(255, 0, 0); // Text colour
+	stroke(255, 0, 0); // Outline colour
+	textSize(25); // Strength
+	text(scoreA, 20, 115); // Home print
+	fill(0, 0, 255); // Text colour
+	stroke(0, 0, 255); // Outline colour
+	text(scoreB, 1300, 115); // Guest print
   
 	/* Move the ball */
-	centerX = centerX + velocityX;
-	centerY = centerY + velocityY;
+	centerX = centerX + velocity;
+	centerY = centerY + velocity;
   
 	/* Control the ball */
 	if (centerX-10 < 0 || centerX+10 >= width) {
-		velocityX = -velocityX;
+		velocity = -velocity;
 	}
   
 	if (centerY-10 < 100 || centerY+10 >= height-100) {
-		velocityY = -velocityY;
+		velocity = -velocity;
 	}
-  
-	// Have a player to control the ball
-	playerHome(xPos, yPos);
-	playerGuest(PosX, PosY);
-	if ((abs(centerX - xPos) <= 30) && (abs(centerY - xPos) <= 80)) {
-		velocityX = -velocityX;
-		velocityY = velocityY;
-		mySound.stop();
-	}
-	
-	// Control the player
-	if (keyIsDown(UP_ARROW)) {
-		yPos-=velocityY;
-	}
-	if (keyIsDown(DOWN_ARROW)) {
-		yPos+=velocityY;
-	}
-	if (keyIsDown(LEFT_ARROW)) {
-		xPos-=velocityX;
-	}
-	if(keyIsDown(RIGHT_ARROW)) {
-		xPos+=velocityX;
-	}
-	
+}
+
+function fansAndPublic() {
+	/* Audience */
+	fill(102, 92, 92); // Colour of the audience's sitting platforms
+	stroke(102, 92, 92); // Border of the audience's platforms
+	rect(0, 0, 1350, 97); // Platform 1
+	rect(0, 593, 1350, 97); // Platform 2
+ 
+	fill(255, 204, 0); // Colour of spectators' heads
+	noStroke(); // No head outline
+	row1.display(); // Display spectators in row 1
+	row2.display(); // Display spectators in row 1
+	row3.display(); // Display spectators in row 1
+	row4.display(); // Display spectators in row 1
+	row5.display(); // Display spectators in row 1
+	row6.display(); // Display spectators in row 1
+}
+
+function scoreRecorder() {
 	/* If statement that will record scores for home team */
-	if (centerX-10 >= 1289) {
+	if ((centerX-10 >= 1289) && (centerX - 10 <= 1329)) {
 		scoreA++;
 		centerX = 70;
 		centerY = 120;
 		mySound.play();
 	}
-  
+	print(mouseX + mouseY);
 	//If home team scores 10 goals
 	if (scoreA >= 10) {
 		fill(255, 0, 0); // Colour
 		stroke(255, 0, 0); // Outline
 		textSize(25); // Size
 		text("You Won!", 675, 340); 
-		noLoop();
 	}
   
 	// If statement that will record scores for guest team
@@ -264,9 +241,43 @@ function draw() {
 		text("You Lost!", 675, 340);
 		noLoop();
 	}
+}
+
+function moveThePlayer() {
+	// Have a player to control the ball
+	playerHome(xPos, yPos);
+	//playerGuest(PosX, PosY);
+	if ((abs(centerX - xPos) <= 10) && (abs(centerY - yPos) <= 80)) {
+		velocity = -velocity;
+		velocity = velocity;
+		mySound.stop();
+	}
 	
-	/*print("Ball X position " + centerX);
-	print("Ball Y position " + centerY);*/
+	// Control the player
+	if (keyIsDown(UP_ARROW)) {
+		yPos = yPos - p1Vel;
+	}
+	if (keyIsDown(DOWN_ARROW)) {
+		yPos = yPos + p1Vel;
+	}
+	if (keyIsDown(LEFT_ARROW)) {
+		xPos = xPos - p1Vel;
+	}
+	if(keyIsDown(RIGHT_ARROW)) {
+		xPos = xPos + p1Vel;
+	}
+}
+
+function draw() {
+	background(0,123, 12); // Soccer field colour
+	
+	arenaField();
+   
+	fansAndPublic();
+	
+	scoreRecorder();
+	
+	moveThePlayer();
 }
 
 // Define the object for drawing audience.
