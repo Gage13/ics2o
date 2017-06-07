@@ -259,14 +259,11 @@ function moveThePlayer() {
 	function keyTyped() {
 		if (key === 'w') {
 			yPos = yPos - p1Vel;
-		}
-		if (key === 's') {
+		} else if (key === 's') {
 			yPos = yPos + p1Vel;
-		}
-		if (key === 'a') {
+		} else if (key === 'a') {
 			xPos = xPos - p1Vel;
-		}
-		if (key === 'd') {
+		} else if (key === 'd') {
 			xPos = xPos + p1Vel;
 		}
 		else {
