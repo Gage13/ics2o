@@ -10,7 +10,8 @@ var scoreB = 0; // Initial guest team score
 // Position and speed variables
 var centerX = 70; // Soccer Ball Initial Position X
 var centerY = 120; // Soccer Ball Initial Position Y
-var velocity = 5; // Initial speed of the ball
+var velocityX = 5; // Initial X speed of the ball
+var velocityY = 5; // Initial Y speed of the ball
 var p1Vel = 5; // Speed of the home player
 
 // Faces of the audience
@@ -178,16 +179,16 @@ function arenaField() {
 	text(scoreB, 1300, 115); // Guest print
   
 	/* Move the ball */
-	centerX = centerX + velocity;
-	centerY = centerY + velocity;
+	centerX = centerX + velocityX;
+	centerY = centerY + velocityY;
   
 	/* Control the ball */
 	if (centerX-10 < 0 || centerX+10 >= width) {
-		velocity = -velocity;
+		velocity = -velocityX;
 	}
   
 	if (centerY-10 < 100 || centerY+10 >= height-100) {
-		velocity = -velocity;
+		velocity = -velocityY;
 	}
 }
 
