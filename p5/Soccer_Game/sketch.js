@@ -259,7 +259,7 @@ function moveThePlayer() {
 // Control the player
 function keyPressed() {
 	if (keyCode == RIGHT_ARROW) {
-		posX += 4;
+		xPos += p1Vel;
 	}
 	else if (keyCode == LEFT_ARROW) {
 		posX -=4;
