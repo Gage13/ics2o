@@ -270,9 +270,7 @@ function keyPressed() {
 	else if (keyCode == DOWN_ARROW) {
 		yPos += p1Vel;
 	}
-	else {
-		return false;
-	}
+	return false;
 }
 
 function draw() {
