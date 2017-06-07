@@ -218,10 +218,7 @@ function scoreRecorder() {
 		mySound.play();
 	}
 	print(mouseX + mouseY);
-	
-	function keyPressed() {
-		return false;
-	}
+
 	//If home team scores 10 goals
 	if (scoreA >= 10) {
 		fill(255, 0, 0); // Colour
@@ -258,18 +255,23 @@ function moveThePlayer() {
 		mySound.stop();
 	}
 	
-	// Control the player
-	if (keyIsDown(UP_ARROW)) {
-		yPos = yPos - p1Vel;
-	}
-	if (keyIsDown(DOWN_ARROW)) {
-		yPos = yPos + p1Vel;
-	}
-	if (keyIsDown(LEFT_ARROW)) {
-		xPos = xPos - p1Vel;
-	}
-	if(keyIsDown(RIGHT_ARROW)) {
-		xPos = xPos + p1Vel;
+	function keyPressed() {
+		// Control the player
+		if (keyIsDown(UP_ARROW)) {
+			yPos = yPos - p1Vel;
+		}
+		if (keyIsDown(DOWN_ARROW)) {
+			yPos = yPos + p1Vel;
+		}
+		if (keyIsDown(LEFT_ARROW)) {
+			xPos = xPos - p1Vel;
+		}
+		if(keyIsDown(RIGHT_ARROW)) {
+			xPos = xPos + p1Vel;
+		}
+		else {
+			return false;
+		}
 	}
 }
 
