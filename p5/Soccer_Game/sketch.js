@@ -70,13 +70,13 @@ function playerGuest(posX, posY) {
 
 function arenaField() {
 	// Draw field lines
-	/* Huge play rect lines */
+	// Huge play rect lines
 	fill(0, 123, 12);
 	stroke(255); // Colour  
 	strokeWeight(5);
 	rect(55, 100, 1230, 490);
 	
-	/* Centre (Circle) */
+	// Centre (Circle)
 	fill(0, 123, 12);
 	stroke(255);
 	strokeWeight(5);
@@ -86,7 +86,7 @@ function arenaField() {
 	fill(255);
 	ellipse(672, 340, 20, 20);
 	
-	/* Centre Line */
+	// Centre Line
 	fill(255);
 	strokeWeight(5);
 	rect(670, 100, 2, 485);
@@ -95,7 +95,7 @@ function arenaField() {
 	fill(0, 123, 12);
 	arc(290, 345, 80, 155, -1.52, 1.52);
 	
-	/* Left Square (Big) */
+	// Left Square (Big)
 	strokeWeight(5);
 	line(55, 175, 290, 175);
 	line(55, 510, 290, 510);
@@ -109,7 +109,7 @@ function arenaField() {
 	fill(0, 123, 12);
 	arc(1060, 345, 80, 155, 1.57, 4.68);
 	
-	/* Right Square (Big) */
+	// Right Square (Big)
 	line(1060, 175, 1285, 175);
 	line(1060, 510, 1285, 510);
 	rect(1060, 175, 2, 335);
@@ -118,18 +118,18 @@ function arenaField() {
 	fill(255);
 	ellipse(1135, 340, 20, 20);
 	
-	/* Left Square (Small) */
+	// Left Square (Small)
 	fill(0, 123, 12);
 	line(55, 212, 152, 212);
 	line(55, 470, 150, 470);
 	rect(150, 215, 2, 255);
 	
-	/* Right Square (Small) */
+	// Right Square (Small)
 	line(1200, 212, 1285, 211);
 	line(1200, 470, 1285, 470);
 	rect(1200, 215, 2, 255);
   
-	/* Corner circles */
+	// Corner circles
 	// Upper Left Corner
 	arc(60, 105, 50, 50, 0, 1.57);
 	// Lower Left Corner
@@ -147,7 +147,7 @@ function arenaField() {
 	rect(0, 242, 50, 200); // Left
 	rect(1289, 245, 50, 200); // Right
    
-	/* Add nets to the goals */
+	// Add nets to the goals
 	
 	// Left Goal
 	for(var i = 10; i < 50; i += 10) {
@@ -157,7 +157,7 @@ function arenaField() {
 		line(0, j, 49, j);
 	}
  
-	/* Right Goal*/
+	// Right Goal
 	for(var k = 1299; k < 1339; k += 10) {
 		line(k, 445, k, 247);
 	}
@@ -165,11 +165,11 @@ function arenaField() {
 		line(1290, l, 1339, l);
 	}
   
-	/* Draw he soccer ball. */
+	// Draw he soccer ball.
 	fill(255);
 	ellipse(centerX, centerY, 20, 20);
 	
-	/* Score Clock */
+	// Score Clock
 	fill(255, 0, 0); // Text colour
 	stroke(255, 0, 0); // Outline colour
 	textSize(25); // Strength
@@ -178,11 +178,11 @@ function arenaField() {
 	stroke(0, 0, 255); // Outline colour
 	text(scoreB, 1300, 115); // Guest print
   
-	/* Move the ball */
+	// Move the ball
 	centerX = centerX + velocityX;
 	centerY = centerY + velocityY;
   
-	/* Control the ball */
+	// Control the ball
 	if (centerX-10 < 0 || centerX+10 >= width) {
 		velocity = -velocityX;
 	}
