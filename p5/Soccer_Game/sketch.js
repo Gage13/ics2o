@@ -218,6 +218,10 @@ function scoreRecorder() {
 		mySound.play();
 	}
 	print(mouseX + mouseY);
+	
+	function keyPressed() {
+		return false;
+	}
 	//If home team scores 10 goals
 	if (scoreA >= 10) {
 		fill(255, 0, 0); // Colour
