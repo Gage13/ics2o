@@ -262,13 +262,13 @@ function keyPressed() {
 		xPos += p1Vel;
 	}
 	else if (keyCode == LEFT_ARROW) {
-		posX -=4;
+		xPos -= p1Vel;
 	}
 	else if (keyCode == UP_ARROW) {
-		posY -=4;
+		yPos -= p1Vel;
 	}
 	else if (keyCode == DOWN_ARROW) {
-		posY +=4;
+		yPos += p1Vel;
 	}
 	else {
 		return false;
