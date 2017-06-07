@@ -187,7 +187,7 @@ function arenaField() {
 		velocityX = -velocityX;
 	}
   
-	if (centerY+10 > 100 || centerY+10 < height-100) {
+	if (centerY+10 < 100 || centerY+10 > height-100) {
 		velocityY = -velocityY;
 	}
 }
