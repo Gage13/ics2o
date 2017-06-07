@@ -254,21 +254,24 @@ function moveThePlayer() {
 		velocity = velocityY;
 		mySound.stop();
 	}
-	
-	// Control the player
-	function keyTyped() {
-		if (key === 'w') {
-			yPos = yPos - p1Vel;
-		} else if (key === 's') {
-			yPos = yPos + p1Vel;
-		} else if (key === 'a') {
-			xPos = xPos - p1Vel;
-		} else if (key === 'd') {
-			xPos = xPos + p1Vel;
-		}
-		else {
-			return false;
-		}
+}
+
+// Control the player
+function keyPressed() {
+	if (keyCode == RIGHT_ARROW) {
+		posX += 4;
+	}
+	else if (keyCode == LEFT_ARROW) {
+		posX -=4;
+	}
+	else if (keyCode == UP_ARROW) {
+		posY -=4;
+	}
+	else if (keyCode == DOWN_ARROW) {
+		posY +=4;
+	}
+	else {
+		return false;
 	}
 }
 
