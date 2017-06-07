@@ -249,8 +249,8 @@ function moveThePlayer() {
 	playerHome(xPos, yPos);
 	//playerGuest(PosX, PosY);
 	if ((abs(centerX - xPos) <= 10) && (abs(centerY - yPos) <= 80)) {
-		velocity = -velocity;
-		velocity = velocity;
+		velocity = -velocityX;
+		velocity = velocityY;
 		mySound.stop();
 	}
 	
