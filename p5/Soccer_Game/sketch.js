@@ -184,11 +184,11 @@ function arenaField() {
   
 	// Control the ball
 	if (centerX-10 < 0 || centerX+10 >= width) {
-		velocity = -velocityX;
+		velocityX = -velocityX;
 	}
   
 	if (centerY+10 > 100 || centerY+10 < height-100) {
-		velocity = -velocityY;
+		velocityY = -velocityY;
 	}
 }
 
