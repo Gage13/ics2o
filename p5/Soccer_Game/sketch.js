@@ -255,23 +255,20 @@ function moveThePlayer() {
 		mySound.stop();
 	}
 	
-	function keyPressed() {
-		// Control the player
-		if (keyIsDown(UP_ARROW)) {
-			yPos = yPos - p1Vel;
-		}
-		if (keyIsDown(DOWN_ARROW)) {
-			yPos = yPos + p1Vel;
-		}
-		if (keyIsDown(LEFT_ARROW)) {
-			xPos = xPos - p1Vel;
-		}
-		if(keyIsDown(RIGHT_ARROW)) {
-			xPos = xPos + p1Vel;
-		}
-		else {
-			return false;
-		}
+	function keyPressed() {return false;}
+	
+	// Control the player
+	if (keyIsDown(UP_ARROW)) {
+		yPos = yPos - p1Vel;
+	}
+	if (keyIsDown(DOWN_ARROW)) {
+		yPos = yPos + p1Vel;
+	}
+	if (keyIsDown(LEFT_ARROW)) {
+		xPos = xPos - p1Vel;
+	}
+	if(keyIsDown(RIGHT_ARROW)) {
+		xPos = xPos + p1Vel;
 	}
 }
 
