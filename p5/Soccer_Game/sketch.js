@@ -5,7 +5,7 @@ Dragi Plakalovic
 // Score variables
 var scoreA = 0; // Initial home team score
 var scoreB = 0; // Initial guest team score
-//var mySound; // Create sound variable (spectators' cheers)
+var mySound; // Create sound variable (spectators' cheers)
 
 // Position and speed variables
 var centerX = 70; // Soccer Ball Initial Position X
