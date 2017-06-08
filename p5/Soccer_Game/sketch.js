@@ -12,7 +12,12 @@ var centerX = 70; // Soccer Ball Initial Position X
 var centerY = 120; // Soccer Ball Initial Position Y
 var velocityX = 5; // Initial X speed of the ball
 var velocityY = 5; // Initial Y speed of the ball
-var p1Vel = 5; // Speed of the home player
+var p1Vel = 5; // Speed of the home team
+var p2Vel = 5; // Speed of guest team
+
+// Arrays to hold team players
+var home = []; 	// Array to hold home team players
+var guest = [];	// Array to hold guest team players
 
 // Faces of the audience
 var row1; // Row 1 audience
@@ -44,9 +49,16 @@ function setup() {
 	row4 = new audience(18, 605, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 4.
 	row5 = new audience(18, 635, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 5.
 	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
+
+	for (var i = 0; i < 7; i++) {
+		home.push(new Home());
+	}
+	for (var j = 0; j < 7; j++) {
+		guest.push(new Guest());
+	}
 }
 
-function playerHome(homeXPos, homeYPos) {
+/*function playerHome(homeXPos, homeYPos) {
 	fill(255,205,148); 	// Body colour
 	noStroke();
 	ellipse(homeXPos + 7, homeYPos - 15, 20, 20);	// Head
@@ -90,7 +102,7 @@ function playerGuest(GuestPosX, GuestPosY) {
 	rect(GuestPosX + 10, GuestPosY + 55, 5, 25); 	// Right leg
 	fill(255,205,148); 	// Body colour
 	rect(GuestPosX + 10, GuestPosY + 65, 5, 15); 	// Right leg (Uncovered)
-}
+}*/
 
 function arenaField() {
 	// Draw field lines
@@ -268,7 +280,7 @@ function scoreRecorder() {
 	}
 }
 
-function moveTheHomePlayer() {
+/*function moveTheHomePlayer() {
 	// Have a player to control the ball
 	playerHome(homeXPos, homeYPos);
 	if ((abs(centerX - homeXPos) <= 5) && (abs(centerY - homeYPos) <= 5)) {
@@ -290,9 +302,9 @@ function moveTheHomePlayer() {
 		homeYPos += p1Vel;
 	}
 	return false;
-}
+}*/
 
-function moveTheGuestPlayer() {
+/*function moveTheGuestPlayer() {
 	// Have a player to control the ball
 	playerGuest(GuestPosX, GuestPosY);
 	if ((abs(centerX - GuestPosX) >= 20) && (abs(centerY - GuestPosY) <= 20)) {
@@ -315,7 +327,7 @@ function moveTheGuestPlayer() {
 		GuestPosY += p1Vel;
 	}
 	return false;
-}
+}*/
 
 function draw() {
 	background(0,123, 12); // Soccer field colour
@@ -326,9 +338,18 @@ function draw() {
 	// Function that records score
 	scoreRecorder();
 	// Function to control home player
-	moveTheHomePlayer();
+	/*moveTheHomePlayer();
 	// Function to control guest player
-	moveTheGuestPlayer();
+	moveTheGuestPlayer();*/
+	// Loop to show player teams
+	for (var i = 0; i < home.length; i++) {
+		home[i].move();
+		home[i].display();
+	}
+	for (var j = 0; j < guest.length; j++) {
+		guest[j].walk();
+		guest[j].show();
+	}
 }
 
 // Define the object for drawing audience.
@@ -346,4 +367,92 @@ function audience(ixp, iyp, iw, ih, id, it) {
 		ellipse(this.xpos+(i*(this.d+this.w)), this.ypos, this.w, this.h);
 		}
 	}
+}
+
+// Define object for drawing home team
+function Home() {
+	this.x = random(0, (width/2));
+	this.y = random(100, (height - 100));
+	
+	this.move = function() {
+		if (keyIsDown(68)) {
+			this.x += p1Vel;
+		}
+		if (keyIsDown(65)) {
+			this.x -= p1Vel;
+		}
+		if (keyIsDown(87)) {
+			this.y -= p1Vel;
+		}
+		if (keyIsDown(83)) {
+			this.y += p1Vel;
+		}
+	};
+	
+	this.display = function() {
+		fill(255,205,148); 	// Body colour
+		noStroke();
+		ellipse(this.x + 7, this.y - 15, 20, 20);	// Head
+		fill(255, 0, 0); 	// Dress colour
+		rect(this.x, this.y, 15, 50);	// Body
+		rect(this.x - 10, this.y, 5, 25); 	// Left arm
+		fill(255,205,148); 	// Body colour
+		rect(this.x - 10, this.y + 10, 5, 15); 	// Left arm (Uncovered)
+		fill(255, 0, 0); 	// Dress colour
+		rect(this.x + 20, this.y, 5, 25); 	// Right arm
+		fill(255,205,148);	// Body colour
+		rect(this.x + 20, this.y + 10, 5, 15); 	// Right arm (Uncovered)
+		fill(255, 0, 0); 	// Dress colour
+		rect(this.x, this.y + 55, 5, 25); 	// Left leg
+		fill(255,205,148); 	// Body colour
+		rect(this.x, this.y + 65, 5, 15); 	// Left leg (Uncovered)
+		fill(255, 0, 0); 	// Dress colour
+		rect(this.x + 10, this.y + 55, 5, 25); 	// Right leg
+		fill(255,205,148); 	// Body colour
+		rect(this.x + 10, this.y + 65, 5, 15); 	// Right leg (Uncovered)
+	};
+}
+
+// Define object for drawing guest team
+function Guest() {
+	this.x = random(width/2, width);
+	this.y = random(100, (height - 100));
+	
+	this.walk = function() {
+		if (keyIsDown(76)) {
+			this.x += p2Vel;
+		}
+		if (keyIsDown(74)) {
+			this.x -= p2Vel;
+		}
+		if (keyIsDown(73)) {
+			this.y -= p2Vel;
+		}
+		if (keyIsDown(75)) {
+			this.y += p2Vel;
+		}
+	};
+	
+	this.show = function() {
+		fill(255,205,148); 	// Body colour
+		noStroke();
+		ellipse(this.x + 7, this.y - 15, 20, 20); 	// Head	
+		fill(0, 0, 255); 	// Dress colour
+		rect(this.x, this.y, 15, 50); 	// Body
+		rect(this.x - 10, this.y, 5, 25); 	// Left arm
+		fill(255,205,148); 	// Body colour
+		rect(this.x - 10, this.y + 10, 5, 15); 	// Left arm (Uncovered)
+		fill(0, 0, 255); 	// Dress colour
+		rect(this.x + 20, this.y, 5, 25); 	// Right arm
+		fill(255,205,148); 	// Body colour
+		rect(this.x + 20, this.y + 10, 5, 15); 	// Right arm (Uncovered)
+		fill(0, 0, 255); 	// Dress colour
+		rect(this.x, this.y + 55, 5, 25); 	// Left leg
+		fill(255,205,148); 	// Body colour
+		rect(this.x, this.y + 65, 5, 15); 	// Left leg (Uncovered)
+		fill(0, 0, 255); 	// Dress colour
+		rect(this.x + 10, this.y + 55, 5, 25); 	// Right leg
+		fill(255,205,148); 	// Body colour
+		rect(this.x + 10, this.y + 65, 5, 15); 	// Right leg (Uncovered)
+	};
 }
