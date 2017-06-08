@@ -27,12 +27,6 @@ var row4; // Row 4 audience
 var row5; // Row 5 audience
 var row6; // Row 6 audience
 
-// Player positions
-var homeXPos = 200;
-var homeYPos = 300;
-var GuestPosX = 1089;
-var GuestPosY = 300;
-
 function preload() {
 	mySound = loadSound("Soccer Cheering.wav"); 
 }
@@ -57,52 +51,6 @@ function setup() {
 		guest.push(new Guest());
 	}
 }
-
-/*function playerHome(homeXPos, homeYPos) {
-	fill(255,205,148); 	// Body colour
-	noStroke();
-	ellipse(homeXPos + 7, homeYPos - 15, 20, 20);	// Head
-	fill(255, 0, 0); 	// Dress colour
-	rect(homeXPos, homeYPos, 15, 50);	// Body
-	rect(homeXPos - 10, homeYPos, 5, 25); 	// Left arm
-	fill(255,205,148); 	// Body colour
-	rect(homeXPos - 10, homeYPos + 10, 5, 15); 	// Left arm (Uncovered)
-	fill(255, 0, 0); 	// Dress colour
-	rect(homeXPos + 20, homeYPos, 5, 25); 	// Right arm
-	fill(255,205,148);	// Body colour
-	rect(homeXPos + 20, homeYPos + 10, 5, 15); 	// Right arm (Uncovered)
-	fill(255, 0, 0); 	// Dress colour
-	rect(homeXPos, homeYPos + 55, 5, 25); 	// Left leg
-	fill(255,205,148); 	// Body colour
-	rect(homeXPos, homeYPos + 65, 5, 15); 	// Left leg (Uncovered)
-	fill(255, 0, 0); 	// Dress colour
-	rect(homeXPos + 10, homeYPos + 55, 5, 25); 	// Right leg
-	fill(255,205,148); 	// Body colour
-	rect(homeXPos + 10, homeYPos + 65, 5, 15); 	// Right leg (Uncovered)
-}
-
-function playerGuest(GuestPosX, GuestPosY) {
-	fill(255,205,148); 	// Body colour
-	noStroke();
-	ellipse(GuestPosX + 7, GuestPosY - 15, 20, 20); 	// Head	
-	fill(0, 0, 255); 	// Dress colour
-	rect(GuestPosX, GuestPosY, 15, 50); 	// Body
-	rect(GuestPosX - 10, GuestPosY, 5, 25); 	// Left arm
-	fill(255,205,148); 	// Body colour
-	rect(GuestPosX - 10, GuestPosY + 10, 5, 15); 	// Left arm (Uncovered)
-	fill(0, 0, 255); 	// Dress colour
-	rect(GuestPosX + 20, GuestPosY, 5, 25); 	// Right arm
-	fill(255,205,148); 	// Body colour
-	rect(GuestPosX + 20, GuestPosY + 10, 5, 15); 	// Right arm (Uncovered)
-	fill(0, 0, 255); 	// Dress colour
-	rect(GuestPosX, GuestPosY + 55, 5, 25); 	// Left leg
-	fill(255,205,148); 	// Body colour
-	rect(GuestPosX, GuestPosY + 65, 5, 15); 	// Left leg (Uncovered)
-	fill(0, 0, 255); 	// Dress colour
-	rect(GuestPosX + 10, GuestPosY + 55, 5, 25); 	// Right leg
-	fill(255,205,148); 	// Body colour
-	rect(GuestPosX + 10, GuestPosY + 65, 5, 15); 	// Right leg (Uncovered)
-}*/
 
 function arenaField() {
 	// Draw field lines
@@ -280,55 +228,6 @@ function scoreRecorder() {
 	}
 }
 
-/*function moveTheHomePlayer() {
-	// Have a player to control the ball
-	playerHome(homeXPos, homeYPos);
-	if ((abs(centerX - homeXPos) <= 5) && (abs(centerY - homeYPos) <= 5)) {
-		velocityX = -velocityX;
-		velocityY = velocityY;
-		mySound.stop();
-	}
-	// Control the player (Home)
-	if (keyIsDown(68)) {
-		homeXPos += p1Vel;
-	}
-	if (keyIsDown(65)) {
-		homeXPos -= p1Vel;
-	}
-	if (keyIsDown(87)) {
-		homeYPos -= p1Vel;
-	}
-	if (keyIsDown(83)) {
-		homeYPos += p1Vel;
-	}
-	return false;
-}*/
-
-/*function moveTheGuestPlayer() {
-	// Have a player to control the ball
-	playerGuest(GuestPosX, GuestPosY);
-	if ((abs(centerX - GuestPosX) >= 20) && (abs(centerY - GuestPosY) <= 20)) {
-		velocityX = -velocityX;
-		velocityY = velocityY;
-		mySound.stop();
-	}
-	
-	// Control the player (Home)
-	if (keyIsDown(76)) {
-		GuestPosX += p1Vel;
-	}
-	if (keyIsDown(74)) {
-		GuestPosX -= p1Vel;
-	}
-	if (keyIsDown(73)) {
-		GuestPosY -= p1Vel;
-	}
-	if (keyIsDown(75)) {
-		GuestPosY += p1Vel;
-	}
-	return false;
-}*/
-
 function draw() {
 	background(0,123, 12); // Soccer field colour
 	// Arena field function call
@@ -337,10 +236,6 @@ function draw() {
 	fansAndPublic();
 	// Function that records score
 	scoreRecorder();
-	// Function to control home player
-	/*moveTheHomePlayer();
-	// Function to control guest player
-	moveTheGuestPlayer();*/
 	// Loop to show player teams
 	for (var i = 0; i < home.length; i++) {
 		home[i].move();
@@ -387,6 +282,13 @@ function Home() {
 		if (keyIsDown(83)) {
 			this.y += p1Vel;
 		}
+		
+		// Mechanism for ball kicking system
+		if ((abs(centerX - this.x) >= 20) && (abs(centerY - this.y) <= 20)) {
+			velocityX = -velocityX;
+			velocityY = velocityY;
+			mySound.stop();
+		}
 	};
 	
 	this.display = function() {
@@ -430,6 +332,13 @@ function Guest() {
 		}
 		if (keyIsDown(75)) {
 			this.y += p2Vel;
+		}
+		
+		// Mechanism for ball kicking system
+		if ((abs(centerX - this.x) >= 20) && (abs(centerY - this.y) <= 20)) {
+			velocityX = -velocityX;
+			velocityY = velocityY;
+			mySound.stop();
 		}
 	};
 	
