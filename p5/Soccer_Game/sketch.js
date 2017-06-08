@@ -23,10 +23,10 @@ var row5; // Row 5 audience
 var row6; // Row 6 audience
 
 // Player positions
-var xPos = 200;
-var yPos = 300;
-var posX = 1289;
-var posY = 300;
+var homeXPos = 200;
+var homeYPos = 300;
+var GuestPosX = 1089;
+var GuestPosY = 300;
 
 function preload() {
 	mySound = loadSound("Soccer Cheering.wav"); 
@@ -46,26 +46,50 @@ function setup() {
 	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
 }
 
-function playerHome(xPos, yPos) {
-	fill(0, 0, 0);
+function playerHome(homeXPos, homeYPos) {
+	fill(255,205,148); 	// Body colour
 	noStroke();
-	rect(xPos, yPos, 15, 50);
-	rect(xPos - 10, yPos, 5, 25);
-	rect(xPos + 20, yPos, 5, 25);
-	rect(xPos, yPos + 55, 5, 25);
-	rect(xPos + 10, yPos + 55, 5, 25);
-	ellipse(xPos + 7, yPos - 15, 20, 20);
+	ellipse(homeXPos + 7, homeYPos - 15, 20, 20);	// Head
+	fill(255, 0, 0); 	// Dress colour
+	rect(homeXPos, homeYPos, 15, 50);	// Body
+	rect(homeXPos - 10, homeYPos, 5, 25); 	// Left arm
+	fill(255,205,148); 	// Body colour
+	rect(homeXPos - 10, homeYPos + 10, 5, 15); 	// Left arm (Uncovered)
+	fill(255, 0, 0); 	// Dress colour
+	rect(homeXPos + 20, homeYPos, 5, 25); 	// Right arm
+	fill(255,205,148);	// Body colour
+	rect(homeXPos + 20, homeYPos + 10, 5, 15); 	// Right arm (Uncovered)
+	fill(255, 0, 0); 	// Dress colour
+	rect(homeXPos, homeYPos + 55, 5, 25); 	// Left leg
+	fill(255,205,148); 	// Body colour
+	rect(homeXPos, homeYPos + 65, 5, 15); 	// Left leg (Uncovered)
+	fill(255, 0, 0); 	// Dress colour
+	rect(homeXPos + 10, homeYPos + 55, 5, 25); 	// Right leg
+	fill(255,205,148); 	// Body colour
+	rect(homeXPos + 10, homeYPos + 65, 5, 15); 	// Right leg (Uncovered)
 }
 
-function playerGuest(posX, posY) {
-	fill(255, 255, 255);
+function playerGuest(GuestPosX, GuestPosY) {
+	fill(255,205,148); 	// Body colour
 	noStroke();
-	rect(posX, posY, 15, 50);
-	rect(posX - 10, posY, 5, 25);
-	rect(posX + 20, posY, 5, 25);
-	rect(posX, posY + 55, 5, 25);
-	rect(posX + 10, posY + 55, 5, 25);
-	ellipse(posX + 7, posY - 15, 20, 20);	
+	ellipse(GuestPosX + 7, GuestPosY - 15, 20, 20); 	// Head	
+	fill(0, 0, 255); 	// Dress colour
+	rect(GuestPosX, GuestPosY, 15, 50); 	// Body
+	rect(GuestPosX - 10, GuestPosY, 5, 25); 	// Left arm
+	fill(255,205,148); 	// Body colour
+	rect(GuestPosX - 10, GuestPosY + 10, 5, 15); 	// Left arm (Uncovered)
+	fill(0, 0, 255); 	// Dress colour
+	rect(GuestPosX + 20, GuestPosY, 5, 25); 	// Right arm
+	fill(255,205,148); 	// Body colour
+	rect(GuestPosX + 20, GuestPosY + 10, 5, 15); 	// Right arm (Uncovered)
+	fill(0, 0, 255); 	// Dress colour
+	rect(GuestPosX, GuestPosY + 55, 5, 25); 	// Left leg
+	fill(255,205,148); 	// Body colour
+	rect(GuestPosX, GuestPosY + 65, 5, 15); 	// Left leg (Uncovered)
+	fill(0, 0, 255); 	// Dress colour
+	rect(GuestPosX + 10, GuestPosY + 55, 5, 25); 	// Right leg
+	fill(255,205,148); 	// Body colour
+	rect(GuestPosX + 10, GuestPosY + 65, 5, 15); 	// Right leg (Uncovered)
 }
 
 function arenaField() {
@@ -217,7 +241,6 @@ function scoreRecorder() {
 		centerY = 120;
 		mySound.play();
 	}
-	print(mouseX + mouseY);
 
 	//If home team scores 10 goals
 	if (scoreA >= 10) {
@@ -245,49 +268,68 @@ function scoreRecorder() {
 	}
 }
 
-function moveThePlayer() {
+function moveTheHomePlayer() {
 	// Have a player to control the ball
-	playerHome(xPos, yPos);
-	//playerGuest(PosX, PosY);
-	if ((abs(centerX - xPos) <= 20) && (abs(centerY - yPos) <= 80)) {
+	playerHome(homeXPos, homeYPos);
+	//playerGuest(GuestPosX, GuestPosY);
+	if ((abs(centerX - homeXPos) <= 20) && (abs(centerY - homeYPos) <= 80)) {
 		velocityX = -velocityX;
 		velocityY = velocityY;
 		mySound.stop();
 	}
-	/*if ((abs(centerX - PosX) >= 20) && (abs(centerY - PosY) <= 80)) {
-		velocityX = -velocityX;
-		velocityY = velocityY;
-		mySound.stop();
-	}*/
+	// Control the player (Home)
+	if (keyIsDown(68)) {
+		homeXPos += p1Vel;
+	}
+	if (keyIsDown(65)) {
+		homeXPos -= p1Vel;
+	}
+	if (keyIsDown(87)) {
+		homeYPos -= p1Vel;
+	}
+	if (keyIsDown(83)) {
+		homeYPos += p1Vel;
+	}
+	return false;
 }
 
-// Control the player
-function keyPressed() {
-	if (keyCode == RIGHT_ARROW) {
-		xPos += p1Vel;
+function moveTheGuestPlayer() {
+	// Have a player to control the ball
+	playerGuest(GuestPosX, GuestPosY);
+	if ((abs(centerX - GuestPosX) >= 20) && (abs(centerY - GuestPosY) <= 80)) {
+		velocityX = -velocityX;
+		velocityY = velocityY;
+		mySound.stop();
 	}
-	else if (keyCode == LEFT_ARROW) {
-		xPos -= p1Vel;
+	
+	// Control the player (Home)
+	if (keyIsDown(76)) {
+		GuestPosX += p1Vel;
 	}
-	else if (keyCode == UP_ARROW) {
-		yPos -= p1Vel;
+	if (keyIsDown(74)) {
+		GuestPosX -= p1Vel;
 	}
-	else if (keyCode == DOWN_ARROW) {
-		yPos += p1Vel;
+	if (keyIsDown(73)) {
+		GuestPosY -= p1Vel;
+	}
+	if (keyIsDown(75)) {
+		GuestPosY += p1Vel;
 	}
 	return false;
 }
 
 function draw() {
 	background(0,123, 12); // Soccer field colour
-	
+	// Arena field function call
 	arenaField();
-   
+   	// Fans and Public function call
 	fansAndPublic();
-	
+	// Function that records score
 	scoreRecorder();
-	
-	moveThePlayer();
+	// Function to control home player
+	moveTheHomePlayer();
+	// Function to control guest player
+	moveTheGuestPlayer();
 }
 
 // Define the object for drawing audience.
