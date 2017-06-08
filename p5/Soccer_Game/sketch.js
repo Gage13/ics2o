@@ -249,7 +249,7 @@ function moveThePlayer() {
 	// Have a player to control the ball
 	playerHome(xPos, yPos);
 	//playerGuest(PosX, PosY);
-	if ((abs(centerX - xPos) <= 20) && (abs(centerY - yPos) <= 80)) {
+	if ((abs(centerX - xPos) >= 20) && (abs(centerY - yPos) <= 80)) {
 		velocity = -velocityX;
 		velocity = velocityY;
 		mySound.stop();
