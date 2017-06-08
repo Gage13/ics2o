@@ -271,7 +271,7 @@ function scoreRecorder() {
 function moveTheHomePlayer() {
 	// Have a player to control the ball
 	playerHome(homeXPos, homeYPos);
-	if ((abs(centerX - homeXPos) <= 20) && (abs(centerY - homeYPos) <= 80)) {
+	if ((abs(centerX - homeXPos) <= 20) && (abs(centerY - homeYPos) <= 20)) {
 		velocityX = -velocityX;
 		velocityY = velocityY;
 		mySound.stop();
