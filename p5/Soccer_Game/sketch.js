@@ -5,7 +5,10 @@ Dragi Plakalovic
 // Score variables
 var scoreA = 0; // Initial home team score
 var scoreB = 0; // Initial guest team score
+
+// Sound and image variables
 var mySound; // Create sound variable (spectators' cheers)
+var imageBall;
 
 // Position and speed variables
 var centerX = 70; // Soccer Ball Initial Position X
@@ -43,13 +46,17 @@ function setup() {
 	row4 = new audience(18, 605, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 4.
 	row5 = new audience(18, 635, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 5.
 	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
-
+	
+	// Make 7 players per team
 	for (var i = 0; i < 7; i++) {
 		home.push(new Home());
 	}
 	for (var j = 0; j < 7; j++) {
 		guest.push(new Guest());
 	}
+	
+	// Load image
+	imageBall = loadImage("soccer-ball.jpg");
 }
 
 function arenaField() {
@@ -149,9 +156,8 @@ function arenaField() {
 		line(1290, l, 1339, l);
 	}
   
-	// Draw he soccer ball.
-	fill(255);
-	ellipse(centerX, centerY, 20, 20);
+	// Display he soccer ball.
+	image(imageBall, centerX, centerY, 20, 20);
 	
 	// Score Clock
 	fill(255, 0, 0); // Text colour
@@ -269,17 +275,18 @@ function Home() {
 	this.x = random(0, (width/2));
 	this.y = random(100, (height - 100));
 	
+	// Prototype to move the team
 	this.move = function() {
-		if (keyIsDown(68)) {
+		if (keyIsDown(68)) {	// D to move right
 			this.x += p1Vel;
 		}
-		if (keyIsDown(65)) {
+		if (keyIsDown(65)) {	// A to move left
 			this.x -= p1Vel;
 		}
-		if (keyIsDown(87)) {
+		if (keyIsDown(87)) {	// W to move up
 			this.y -= p1Vel;
 		}
-		if (keyIsDown(83)) {
+		if (keyIsDown(83)) { 	// S to move down
 			this.y += p1Vel;
 		}
 		
@@ -291,6 +298,7 @@ function Home() {
 		}
 	};
 	
+	// Prototype to display the team
 	this.display = function() {
 		fill(255,205,148); 	// Body colour
 		noStroke();
