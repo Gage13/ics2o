@@ -271,7 +271,6 @@ function scoreRecorder() {
 function moveTheHomePlayer() {
 	// Have a player to control the ball
 	playerHome(homeXPos, homeYPos);
-	//playerGuest(GuestPosX, GuestPosY);
 	if ((abs(centerX - homeXPos) <= 20) && (abs(centerY - homeYPos) <= 80)) {
 		velocityX = -velocityX;
 		velocityY = velocityY;
@@ -296,7 +295,7 @@ function moveTheHomePlayer() {
 function moveTheGuestPlayer() {
 	// Have a player to control the ball
 	playerGuest(GuestPosX, GuestPosY);
-	if ((abs(centerX - GuestPosX) >= 20) && (abs(centerY - GuestPosY) <= 80)) {
+	if ((abs(centerX - GuestPosX) >= 20) && (abs(centerY - GuestPosY) <= 20)) {
 		velocityX = -velocityX;
 		velocityY = velocityY;
 		mySound.stop();
