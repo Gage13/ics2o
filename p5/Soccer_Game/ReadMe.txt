@@ -5,10 +5,10 @@ Thank you!
 
 First Version (v1.0.0) was released on April 15th, 2017
 
-Current Version of the Game: v1.2.3 (Previous versions: v1.0.0, v1.1.0, v1.2.0, v1.2.1, v1.2.2)
+Current Version of the Game: v1.3.0 (Previous versions: v1.0.0, v1.1.0, v1.2.0, v1.2.1, v1.2.2, v1.2.3)
 New updates? Yes (see below)
 
-Applied updates: Yes (April 19, 2017; April 21, 2017; April 22, 2017; April 23, 2017; April 26, 2017)
+Applied updates: Yes (April 19, 2017; April 21, 2017; April 22, 2017; April 23, 2017; April 26, 2017; June 8th, 2017)
 
 Update: 1 (v1.0.0 --> v1.1.0)
 Playing field will be redrawn to be more identical to real soccer field. The thickness of the lines will be reduced and the playground will be enlarged to accomodate these changes. As a result, more audience will be designed.
@@ -31,5 +31,7 @@ This update was supposed to be v1.3.0 However, as most of its content was releas
 Released: April 26, 2017
 
 Update: 6 (v1.2.3 --> v1.3.0)
-Update 1.3.0 implements two players controlled by keyboard; players have dresses.
-Released: TBD (Not implemented entirely [Shall not be counted as an update])
+Finally, the update that has been waited for so long! The game introduces two teams, Home and Guest. Use WASD to move Home and JIKL to move guest team. Furthermore, the function for collision with the soccer ball is perfected and new "soccer ball" is introduced. Furthermore, the system for recording score is improved so only that score is recorded only in the net. In the end, the sound control is introduced and the Pause function is still in development. Game will stop after first team score 10 goals. The update in website and the game's description and instructions is pending. More comments will be added to explain the code for those who want to use it. More updates will be introduced in subsequent updates.
+Released: June 8th, 2017
+
+I apologize for long time between updates. Many new features have been developed behind the scene and are not introduced in small updates like in previous ones. I hope that by June 19th, 2017 the game will be ready for use. From that date, the version is to be v1.0.0 This versions will be treated as pre-release development updates to the original one. As a result, new numbering scheme will be introduced. I hope that this game will be ported to other programming languages and be available as computer program, not a website script. I thank you all for using this game. For more information, contact me. With respect, Gage13.
