@@ -29,3 +29,7 @@ Released: April 23, 2017
 Update: 5 (v1.2.2 --> v1.2.3)
 This update was supposed to be v1.3.0 However, as most of its content was released in v1.2.1 and v1.2.2, its purpose doesn't have sense. This update changes the instructions of the game and includes audio file. The audio was present from v1.2.0, but some technical difficulties prevented it from being released. The problem is fixed by adding .htaccess file that adds support for .wav files
 Released: April 26, 2017
+
+Update: 6 (v1.2.3 --> v1.3.0)
+Update 1.3.0 implements two players controlled by keyboard; players have dresses.
+Released: TBD (Not implemented entirely [Shall not be counted as an update])
