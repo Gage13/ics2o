@@ -273,7 +273,7 @@ function audience(ixp, iyp, iw, ih, id, it) {
 // Define object for drawing home team
 function Home() {
 	this.x = random(0, (width/2));
-	this.y = random(100, (height - 100));
+	this.y = random(100, (height - 120));
 	
 	// Prototype to move the team
 	this.move = function() {
@@ -291,7 +291,7 @@ function Home() {
 		}
 		
 		// Mechanism for ball kicking system
-		if ((abs(centerX - this.x) >= 20) && (abs(centerY - this.y) <= 20)) {
+		if ((abs(centerX - this.x) >= 20) && (abs(centerY - this.y) >= 20)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
 			mySound.stop();
@@ -326,7 +326,7 @@ function Home() {
 // Define object for drawing guest team
 function Guest() {
 	this.x = random(width/2, width);
-	this.y = random(100, (height - 100));
+	this.y = random(100, (height - 120));
 	
 	this.walk = function() {
 		if (keyIsDown(76)) {
@@ -343,7 +343,7 @@ function Guest() {
 		}
 		
 		// Mechanism for ball kicking system
-		if ((abs(centerX - this.x) >= 20) && (abs(centerY - this.y) <= 20)) {
+		if ((abs(centerX - this.x) >= 20) && (abs(centerY - this.y) >= 20)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
 			mySound.stop();
