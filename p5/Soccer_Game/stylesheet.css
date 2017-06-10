@@ -13,6 +13,9 @@ body {
 	zoom: 0.9;
 	color: white;
 	background-color: #20205D;
+	background-image: url("Banner.PNG");
+	background-position: middle top;
+	background-repeat: no-repeat;
 }
 
 table, th, td {
