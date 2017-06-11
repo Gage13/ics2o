@@ -373,3 +373,13 @@ function Guest() {
 		rect(this.x + 10, this.y + 65, 5, 15); 	// Right leg (Uncovered)
 	};
 }
+
+// Pause function code
+function keyTyped() {
+	if (key === 'p') {
+		noLoop();
+	} else if (key === 'c') {
+		loop();
+	}
+	return false;
+}
