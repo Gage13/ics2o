@@ -157,7 +157,7 @@ function arenaField() {
 	}
   
 	// Display he soccer ball.
-	image(imageBall, centerX, centerY, 20, 20);
+	image(imageBall, centerX, centerY, 40, 40);
 	
 	// Score Clock
 	fill(255, 0, 0); // Text colour
@@ -214,6 +214,7 @@ function scoreRecorder() {
 		stroke(255, 0, 0); // Outline
 		textSize(25); // Size
 		text("You Won!", 675, 340); 
+		noLoop();
 	}
   
 	// If statement that will record scores for guest team
