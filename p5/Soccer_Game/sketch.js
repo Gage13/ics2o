@@ -56,7 +56,7 @@ function setup() {
 	}
 	
 	// Load image
-	imageBall = loadImage("soccer-ball.jpg");
+	imageBall = loadImage("Soccer Ball.gif");
 }
 
 function arenaField() {
