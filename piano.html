@@ -1,68 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-        <title>Piano in Arduino</title>
-</head>
- 
-<body>
-         <pre>
-         #include "pitches.h"
-
-        int button_C = 10;
-        int button_D = 12;
-        int button_E = 2;
-
-        int speaker = A0;
-
-        int buttonstate_C = 0;
-        int buttonstate_D = 0;
-        int buttonstate_E = 0;
-
-        //NOTES         'c'  , 'd',  'e'
-        int tones[] = { NOTE_C6, NOTE_D6, NOTE_E6}; // Tones in MIDI
-        int Cur_tone = 0;
-
-        void setup()
-        {
-          pinMode(button_C, INPUT);
-          pinMode(button_D, INPUT);
-          pinMode(button_E, INPUT);
-
-          pinMode(speaker, OUTPUT);
-        }
-
-        void loop()
-        {
-          buttonstate_C = digitalRead(button_C);
-          buttonstate_D = digitalRead(button_D);
-          buttonstate_E = digitalRead(button_E);
-
-          if((buttonstate_C == HIGH) || (buttonstate_E == HIGH) || (buttonstate_D == HIGH))
-          { 
-            if (buttonstate_C == HIGH)
-            {
-              Cur_tone = tones[0];
-            } 
-            if (buttonstate_D == HIGH)
-            {
-              Cur_tone = tones[3];
-            }
-            if (buttonstate_E == HIGH)
-            {
-              Cur_tone = tones[1];
-            }
-
-            digitalWrite(speaker, HIGH);
-            delayMicroseconds(Cur_tone);
-            digitalWrite(speaker, LOW);
-            delayMicroseconds(Cur_tone);
-          }
-          else //in case no button is pressed , close the piezo
-          {
-            digitalWrite(speaker, LOW);
-          }
-               
-          }
-          </pre>
- </body>
- </html>
+  <head>
+    <title>Piano in Arduino</title>
+    <style>
+      body {
+        background-color: #66ff99;
+        color: black;
+        text-align: center;
+      }
+      h1 {
+        border: 10px solid blue;
+        text-align: center;
+        font-size: 40px;
+        font: Comic Sans MS;
+        background-color: rgb(0, 255, 255);
+        color: rgb(255, 0, 0);
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>Piano in Arduino</h1>
+  </body>
+</html>
