@@ -28,6 +28,7 @@
       where resistor is placed to control volume of the piano's speaker. Small leg sends button's state to Arduino's "Digital" pins. Arduino processes the readings and 
       processes them into sounds that are send to the speaker from the Arduino's "Analog" pins. To conclude, that is short description of how my piano works. Piano's diagram is included.
     </p>
+    <img src="piano.PNG" alt="piano" width="200" height="200">
     <p>
       As said earlier, buttons send their states to Digital pins declared as input pins. If either pin is pushed, speaker is openned and speaker emits tone from the array. The tone's MIDI value
       is used to determine tone duration and it is used to delay statements that control paino's speaker. The result is send to output analog pin to which speaker is connected to. If neither button 
