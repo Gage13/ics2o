@@ -284,7 +284,7 @@ function mainTitleCard() {
 	textSize(70);	// Same text size as above
 	text("Instructions", 770, 425);	// "Instructions" text
 	
-	if (/*mouseIsPressed &&*/ (mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 480)) {
+	if (/*mouseIsPressed &&*/ (mouseX >= 100) && (mouseX <= 590) && (mouseY >= 290) && (mouseY <= 480)) {
 		status = /*1*/0;
 	}
 }
@@ -297,7 +297,7 @@ function draw() {
 		playTheGame();
 	}
 	
-	print((mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 480));
+	print((mouseX >= 100) && (mouseX <= 590) && (mouseY >= 290) && (mouseY <= 480));
 	print("Mouse X is " + round(mouseX));
 	print("Mouse Y is " + round(mouseY));
 }
