@@ -320,13 +320,13 @@ function instructions() {
 	textSize(70);	// Same text size as above
 	text("Start", 770, 425);	// "Start the game" text
 	
-	if (mouseIsPressed && (mouseX >= 80) && (mouseX <= 520) && (mouseY >= 290) && (mouseY <= 480)) {
+	/*if (mouseIsPressed && (mouseX >= 80) && (mouseX <= 520) && (mouseY >= 290) && (mouseY <= 480)) {
 		status = 0;
 	}
 	
 	if (mouseIsPressed && (mouseX >= 730) && (mouseX <= 1170) && (mouseY >= 290) && (mouseY <= 480)) {
 		status = 1;
-	}
+	}*/
 }
 
 function draw() {
