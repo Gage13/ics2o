@@ -287,6 +287,14 @@ function mainTitleCard() {
 	if (mouseIsPressed && (mouseX >= 80) && (mouseX <= 520) && (mouseY >= 290) && (mouseY <= 480)) {
 		status = 1;
 	}
+	
+	if (mouseIsPressed && (mouseX >= 730) && (mouseX <= 1170) && (mouseY >= 290) && (mouseY <= 480)) {
+		status = 2;
+	}
+}
+
+function instructions() {
+	background(0);
 }
 
 function draw() {
@@ -295,6 +303,9 @@ function draw() {
 	}
 	if (status == 1) {
 		playTheGame();
+	}
+	if (status == 2) {
+		instructions();
 	}
 }
 
