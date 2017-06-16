@@ -287,46 +287,6 @@ function mainTitleCard() {
 	if (mouseIsPressed && (mouseX >= 80) && (mouseX <= 520) && (mouseY >= 290) && (mouseY <= 480)) {
 		status = 1;
 	}
-	
-	if (mouseIsPressed && (mouseX >= 730) && (mouseX <= 1170) && (mouseY >= 290) && (mouseY <= 480)) {
-		status = 2;
-	}
-}
-
-function instructions() {
-	// Background of the instructions card
-	background(0, 123, 12);
-	
-	// Here are instructions for the game
-	fill(255);
-	textSize(29); 	// Size of the font
-	text("Thank you for playing my soccer game. To see instructions on playing my game, click Instructions box.", 5, 35);
-	text("If you know already how to play the game, just click Start. I hope you enjoy my soccer game. Play it.", 5, 70);
-	textSize(70); // Home vs Guest 
-	text("Soccer game. Canada vs Northern Ireland", 30, 200);
-	/* Who made this game? */
-	textSize(30);
-	text("Made by: Dragi Plakalovic (aka Gage13)", 425, 600);
-	
-	// Text boxes and captions
-	fill(255, 0, 0);	// Box colour
-	rect(100, 300, 490, 200); 	// Draw Back Box
-	fill(255);	// Fill text inside box
-	textSize(70);	// Size of the "Start"
-	text("Back", 120, 425); 	// Go back to the main menu
-	fill(255, 0, 0); 	// Second box colour
-	rect(750, 300, 490, 200); 	// Start box show
-	fill(255);	// Fill text inside the box
-	textSize(70);	// Same text size as above
-	text("Start", 770, 425);	// "Start the game" text
-	
-	/*if (mouseIsPressed && (mouseX >= 80) && (mouseX <= 520) && (mouseY >= 290) && (mouseY <= 480)) {
-		status = 0;
-	}
-	
-	if (mouseIsPressed && (mouseX >= 730) && (mouseX <= 1170) && (mouseY >= 290) && (mouseY <= 480)) {
-		status = 1;
-	}*/
 }
 
 function draw() {
@@ -335,9 +295,6 @@ function draw() {
 	}
 	if (status == 1) {
 		playTheGame();
-	}
-	if (status == 2) {
-		instructions();
 	}
 }
 
