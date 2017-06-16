@@ -292,7 +292,7 @@ function Home() {
 		}
 		
 		// Mechanism for ball kicking system
-		if ((abs(centerX - this.x) >= 20) && (abs(centerY - this.y) >= 20)) {
+		if ((abs(centerX - this.x) <= 20) && (abs(centerY - this.y) <= 20)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
 			mySound.stop();
@@ -344,7 +344,7 @@ function Guest() {
 		}
 		
 		// Mechanism for ball kicking system
-		if ((abs(centerX - this.x) >= 20) && (abs(centerY - this.y) >= 20)) {
+		if ((abs(centerX - this.x) <= 20) && (abs(centerY - this.y) <= 20)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
 			mySound.stop();
