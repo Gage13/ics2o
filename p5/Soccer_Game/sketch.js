@@ -282,7 +282,11 @@ function mainTitleCard() {
 	rect(750, 300, 490, 200); 	// Instructions box show
 	fill(255);	// Fill text inside the box
 	textSize(70);	// Same text size as above
-	text("Instructions", 770, 425);	// "Instructions text"	
+	text("Instructions", 770, 425);	// "Instructions" text
+	
+	if (mouseIsPressed && (mouseX >= 100) && (mouseX <= 590) && (mouseY >= 320) && (mouseY <= 350)) {
+		status = 1;
+	}
 }
 
 function draw() {
