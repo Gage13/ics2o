@@ -22,6 +22,9 @@ var p2Vel = 5; // Speed of guest team
 var home = []; 	// Array to hold home team players
 var guest = [];	// Array to hold guest team players
 
+// A variable that will be used to switch between cards and the core game
+var status = 0;
+
 // Faces of the audience
 var row1; // Row 1 audience
 var row2; // Row 2 audience
@@ -254,8 +257,41 @@ function playTheGame() {
 	}
 }
 
+function mainTitleCard() {
+	// Background of the main title card
+	background(0, 123, 12);
+	
+	// Title of the card and short intro
+	fill(255);
+	textSize(29); 	// Size of the font
+	text("Thank you for playing my soccer game. To see instructions on playing my game, click Instructions box.", 5, 35);
+	text("If you know already how to play the game, just click Start. I hope you enjoy my soccer game. Play it.", 5, 70);
+	textSize(70); // Home vs Guest 
+	text("Soccer game. Canada vs Northern Ireland", 30, 200);
+	/* Who made this game? */
+	textSize(30);
+	text("Made by: Dragi Plakalovic (aka Gage13)", 425, 600);
+	
+	// Text boxes and captions
+	fill(255, 0, 0);	// Box colour
+	rect(100, 300, 490, 200); 	// Draw Start Box
+	fill(255);	// Fill text inside box
+	textSize(70);	// Size of the "Start"
+	text("Play the game", 120, 425); 	// Display "Start"
+	fill(255, 0, 0); 	// Second box colour
+	rect(750, 300, 490, 200); 	// Instructions box show
+	fill(255);	// Fill text inside the box
+	textSize(70);	// Same text size as above
+	text("Instructions", 770, 425);	// "Instructions text"	
+}
+
 function draw() {
-	playTheGame();
+	if (status == 0) {
+		mainTitleCard();
+	}
+	if (status == 1) {
+		playTheGame();
+	}
 }
 
 // Define the object for drawing audience.
