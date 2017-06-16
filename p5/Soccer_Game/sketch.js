@@ -298,6 +298,8 @@ function draw() {
 	}
 	
 	print((mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 500));
+	print("Mouse X is "mouseX);
+	print("Mouse Y is "mouseY);
 }
 
 // Define the object for drawing audience.
