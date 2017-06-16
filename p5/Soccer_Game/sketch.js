@@ -235,7 +235,7 @@ function scoreRecorder() {
 	}
 }
 
-function draw() {
+function playTheGame() {
 	background(0,123, 12); // Soccer field colour
 	// Arena field function call
 	arenaField();
@@ -252,6 +252,10 @@ function draw() {
 		guest[j].walk();
 		guest[j].show();
 	}
+}
+
+function draw() {
+	playTheGame();
 }
 
 // Define the object for drawing audience.
