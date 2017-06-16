@@ -297,7 +297,7 @@ function draw() {
 		playTheGame();
 	}
 	
-	print((mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 500));
+	print((mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 480));
 	print("Mouse X is " + round(mouseX));
 	print("Mouse Y is " + round(mouseY));
 }
