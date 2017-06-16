@@ -296,6 +296,8 @@ function draw() {
 	if (status == 1) {
 		playTheGame();
 	}
+	
+	print((mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 500));
 }
 
 // Define the object for drawing audience.
