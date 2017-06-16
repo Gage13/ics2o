@@ -285,7 +285,7 @@ function mainTitleCard() {
 	text("Instructions", 770, 425);	// "Instructions" text
 	
 	if (/*mouseIsPressed &&*/ (mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 500)) {
-		status = 1;
+		status = /*1*/0;
 	}
 }
 
