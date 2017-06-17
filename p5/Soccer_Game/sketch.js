@@ -326,10 +326,9 @@ function instructions() {
 		status = 0;
 	}
 	
-	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 300) && (mouseY <= 400)) {
+	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 100) && (mouseY <= 200)) {
 		status = 1;
 	}
-	print((mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 300) && (mouseY <= 400));
 }
 
 function draw() {
