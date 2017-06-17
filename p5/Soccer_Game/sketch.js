@@ -284,7 +284,46 @@ function mainTitleCard() {
 	textSize(70);	// Same text size as above
 	text("Instructions", 770, 425);	// "Instructions" text
 	
-	if (mouseIsPressed && (mouseX >= 80) && (mouseX <= 520) && (mouseY >= 290) && (mouseY <= 480)) {
+	if (mouseIsPressed && (mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 500)) {
+		status = 1;
+	}
+	
+	if (mouseIsPressed && (mouseX >= 750) && (mouseX <= 1240) && (mouseY >= 300) && (mouseY <= 500)) {
+		status = 2;
+	}
+}
+
+function instructions() {
+	background(0, 123, 12);	// Background
+	// Text properties and the script
+	fill(255);	// White text
+	textSize(20); 	// Size 20
+	text("Playing my soccer game is very easy. Game will randomly position players of teams of Canada and Northern Ireland. " +
+			"We will refer these teams as Home", 10, 100);
+	text("and Guest teams, respectively. To control team Home, use W for up, A for left, S for down, and D for right. " + 
+			"To control Guest, use J for left, K for down,", 10, 125);
+	text("L for right, and I for up. This game offers a Pause function. To pause the game, press P. To unpause, press C. " + 
+			"If you have any problems with the game,", 10, 150);
+	text("please contact me ASAP! The objective of the game is to make 10 goals while avoiding your oponnent team scoring any." + 
+			"I wish you good luck and I hope ", 10, 175);
+	text("you will enjoy my game. Enjoy!", 10, 200);
+	
+	// Code for drawing buttons
+	fill(255, 0, 0);	// Button 1
+	rect(250, 250, 300, 100);
+	fill(255);
+	textSize(70);;
+	text("Back", 270, 320);
+	fill(255, 0, 0);
+	rect(800, 250, 300, 100);
+	fill(255);
+	text("Play", 820, 320);
+	
+	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 250) && (mouseY <= 350)) {
+		status = 0;
+	}
+	
+	if (mouseIsPressed && CmouseX >= 250) && (mouseX <= 550) && (mouseY >= 250) && (mouseY <= 350)); {
 		status = 1;
 	}
 }
@@ -295,6 +334,9 @@ function draw() {
 	}
 	if (status == 1) {
 		playTheGame();
+	}
+	if (status == 2) {
+		instructions();
 	}
 }
 
