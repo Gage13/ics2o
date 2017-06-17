@@ -60,6 +60,9 @@ function setup() {
 	
 	// Load image
 	imageBall = loadImage("soccer-ball.gif");
+	
+	// Bump frame rate to 60 fps
+	frameRate(60);
 }
 
 function arenaField() {
