@@ -323,7 +323,7 @@ function instructions() {
 		status = 0;
 	}
 	
-	if (mouseIsPressed && CmouseX >= 250) && (mouseX <= 550) && (mouseY >= 250) && (mouseY <= 350)); {
+	if (mouseIsPressed && (mouseX >= 250) && (mouseX <= 550) && (mouseY >= 250) && (mouseY <= 350)); {
 		status = 1;
 	}
 }
