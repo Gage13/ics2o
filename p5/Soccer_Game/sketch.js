@@ -332,10 +332,10 @@ function draw() {
 	if (status == 0) {
 		mainTitleCard();
 	}
-	if (status == 1) {
+	else if (status == 1) {
 		playTheGame();
 	}
-	if (status == 2) {
+	else if (status == 2) {
 		instructions();
 	}
 }
