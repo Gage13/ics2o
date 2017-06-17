@@ -35,7 +35,9 @@ Finally, the update that has been waited for so long! The game introduces two te
 Released: June 8th, 2017
 
 Update: 7 (v1.3.0 --> v1.3.1)
-As promised in previous update, Pause function is introduced and website outlook, description and instruction are implemented. More updates are coming
+As promised in previous update, Pause function is introduced and website outlook, description and instruction are implemented.
+Game cards are added: "Main Title Card" and "Instructions" card are added and Instructions from the website are moved into the game. New website has been added to host Description about the game and previous location of the description have been deleted
+as new one have been created and linked to main webpage.
 Released: June 11th, 2017
 
 I apologize for long time between updates. Many new features have been developed behind the scene and are not introduced in small updates like in previous ones. I hope that by June 19th, 2017 the game will be ready for use. From that date, the version is to be v1.0.0 This versions will be treated as pre-release development updates to the original one. As a result, new numbering scheme will be introduced. I hope that this game will be ported to other programming languages and be available as computer program, not a website script. I thank you all for using this game. For more information, contact me. With respect, Gage13.
