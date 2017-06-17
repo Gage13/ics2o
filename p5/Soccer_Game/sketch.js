@@ -286,11 +286,11 @@ function mainTitleCard() {
 	textSize(70);	// Same text size as above
 	text("Instructions", 770, 425);	// "Instructions" text
 	
-	if (mouseIsPressed && (mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 500)) {
+	if (mouseIsPressed && (mouseX > 100) && (mouseX < 590) && (mouseY > 300) && (mouseY < 500)) {
 		status = 1;
 	}
 	
-	if (mouseIsPressed && (mouseX >= 750) && (mouseX <= 1240) && (mouseY >= 300) && (mouseY <= 500)) {
+	if (mouseIsPressed && (mouseX > 750) && (mouseX < 1240) && (mouseY > 300) && (mouseY < 500)) {
 		status = 2;
 	}
 }
@@ -322,15 +322,13 @@ function instructions() {
 	fill(255);
 	text("Play", 820, 170);
 	
-	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 250) && (mouseY <= 350)) {
-		status = 1;
-	}
-	
-	if (mouseIsPressed && (mouseX >= 250) && (mouseX <= 550) && (mouseY >= 250) && (mouseY <= 350)) {
+	if (mouseIsPressed && (mouseX > 250) && (mouseX < 550) && (mouseY > 100) && (mouseY < 200)) {
 		status = 0;
 	}
 	
-	print((mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 250) && (mouseY <= 350));
+	if ((mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 300) && (mouseY <= 400)) {
+		status = 1;
+	}
 }
 
 function draw() {
