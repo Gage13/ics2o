@@ -299,25 +299,25 @@ function instructions() {
 	fill(255);	// White text
 	textSize(20); 	// Size 20
 	text("Playing my soccer game is very easy. Game will randomly position players of teams of Canada and Northern Ireland. " +
-			"We will refer these teams as Home", 10, 100);
+			"We will refer these teams as Home", 10, 250);
 	text("and Guest teams, respectively. To control team Home, use W for up, A for left, S for down, and D for right. " + 
-			"To control Guest, use J for left, K for down,", 10, 125);
+			"To control Guest, use J for left, K for down,", 10, 275);
 	text("L for right, and I for up. This game offers a Pause function. To pause the game, press P. To unpause, press C. " + 
-			"If you have any problems with the game,", 10, 150);
+			"If you have any problems with the game,", 10, 300);
 	text("please contact me ASAP! The objective of the game is to make 10 goals while avoiding your oponnent team scoring any." + 
-			"I wish you good luck and I hope ", 10, 175);
-	text("you will enjoy my game. Enjoy!", 10, 200);
+			"I wish you good luck and I hope ", 10, 325);
+	text("you will enjoy my game. Enjoy!", 10, 350);
 	
 	// Code for drawing buttons
 	fill(255, 0, 0);	// Button 1
-	rect(250, 250, 300, 100);
+	rect(250, 100, 300, 100);
 	fill(255);
 	textSize(70);;
-	text("Back", 270, 320);
+	text("Back", 270, 170);
 	fill(255, 0, 0);
-	rect(800, 250, 300, 100);
+	rect(800, 100, 300, 100);
 	fill(255);
-	text("Play", 820, 320);
+	text("Play", 820, 170);
 	
 	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 250) && (mouseY <= 350)) {
 		status = 0;
