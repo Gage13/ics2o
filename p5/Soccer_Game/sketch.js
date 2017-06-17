@@ -239,6 +239,7 @@ function scoreRecorder() {
 }
 
 function playTheGame() {
+	mySound.play();
 	background(0,123, 12); // Soccer field colour
 	// Arena field function call
 	arenaField();
@@ -258,6 +259,7 @@ function playTheGame() {
 }
 
 function mainTitleCard() {
+	mySound.stop();
 	// Background of the main title card
 	background(0, 123, 12);
 	
@@ -294,6 +296,7 @@ function mainTitleCard() {
 }
 
 function instructions() {
+	mySound.stop();
 	background(0, 123, 12);	// Background
 	// Text properties and the script
 	fill(255);	// White text
