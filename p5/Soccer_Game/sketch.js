@@ -320,11 +320,11 @@ function instructions() {
 	text("Play", 820, 170);
 	
 	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 250) && (mouseY <= 350)) {
-		status = 0;
+		status = 1;
 	}
 	
 	if (mouseIsPressed && (mouseX >= 250) && (mouseX <= 550) && (mouseY >= 250) && (mouseY <= 350)); {
-		status = 1;
+		status = 0;
 	}
 }
 
