@@ -23,7 +23,7 @@ var home = []; 	// Array to hold home team players
 var guest = [];	// Array to hold guest team players
 
 // A variable that will be used to switch between cards and the core game
-var status = 0;
+//var status = 0;
 
 // Faces of the audience
 var row1; // Row 1 audience
@@ -258,7 +258,7 @@ function playTheGame() {
 	}
 }
 
-function mainTitleCard() {
+/*function mainTitleCard() {
 	mySound.stop();
 	// Background of the main title card
 	background(0, 123, 12);
@@ -270,7 +270,7 @@ function mainTitleCard() {
 	text("If you know already how to play the game, just click Start. I hope you enjoy my soccer game. Play it.", 5, 70);
 	textSize(70); // Home vs Guest 
 	text("Soccer game. Canada vs Northern Ireland", 30, 200);
-	/* Who made this game? */
+	// Who made this game?
 	textSize(30);
 	text("Made by: Dragi Plakalovic (aka Gage13)", 425, 600);
 	
@@ -293,9 +293,9 @@ function mainTitleCard() {
 	if (mouseIsPressed && (mouseX >= 750) && (mouseX <= 1240) && (mouseY >= 300) && (mouseY <= 500)) {
 		status = 2;
 	}
-}
+}*/
 
-function instructions() {
+/*function instructions() {
 	mySound.stop();
 	background(0, 123, 12);	// Background
 	// Text properties and the script
@@ -329,15 +329,15 @@ function instructions() {
 	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 100) && (mouseY <= 200)) {
 		status = 1;
 	}
-}
+}*/
 
 function draw() {
-	if (status == 0) {
+	/*if (status == 0) {
 		mainTitleCard();
-	}
-	else if (status == 1) {
+	}*/
+	//else if (status == 1) {
 		playTheGame();
-	}
+	//}
 	/*else if (status == 2) {
 		instructions();
 	}*/
