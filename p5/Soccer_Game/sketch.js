@@ -338,7 +338,7 @@ function draw() {
 	else if (status == 1) {
 		playTheGame();
 	}
-	/else if (status == 2) {
+	else if (status == 2) {
 		instructions();
 	}
 }
