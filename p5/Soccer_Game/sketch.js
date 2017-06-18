@@ -60,9 +60,6 @@ function setup() {
 	
 	// Load image
 	imageBall = loadImage("soccer-ball.gif");
-	
-	// Bump frame rate to 60 fps
-	frameRate(60);
 }
 
 function arenaField() {
@@ -341,9 +338,9 @@ function draw() {
 	else if (status == 1) {
 		playTheGame();
 	}
-	else if (status == 2) {
+	/*else if (status == 2) {
 		instructions();
-	}
+	}*/
 }
 
 // Define the object for drawing audience.
