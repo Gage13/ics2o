@@ -238,7 +238,7 @@ function scoreRecorder() {
 	}
 }
 
-function playTheGame() {
+/*function playTheGame() {
 	mySound.play();
 	background(0,123, 12); // Soccer field colour
 	// Arena field function call
@@ -258,7 +258,7 @@ function playTheGame() {
 	}
 }
 
-/*function mainTitleCard() {
+function mainTitleCard() {
 	mySound.stop();
 	// Background of the main title card
 	background(0, 123, 12);
@@ -293,9 +293,9 @@ function playTheGame() {
 	if (mouseIsPressed && (mouseX >= 750) && (mouseX <= 1240) && (mouseY >= 300) && (mouseY <= 500)) {
 		status = 2;
 	}
-}*/
+}
 
-/*function instructions() {
+function instructions() {
 	mySound.stop();
 	background(0, 123, 12);	// Background
 	// Text properties and the script
@@ -334,13 +334,31 @@ function playTheGame() {
 function draw() {
 	/*if (status == 0) {
 		mainTitleCard();
-	}*/
-	//else if (status == 1) {
+	}
+	else if (status == 1) {
 		playTheGame();
-	//}
-	/*else if (status == 2) {
+	}
+	/else if (status == 2) {
 		instructions();
 	}*/
+	mySound.play();
+	background(0,123, 12); // Soccer field colour
+	// Arena field function call
+	arenaField();
+   	// Fans and Public function call
+	fansAndPublic();
+	// Function that records score
+	scoreRecorder();
+	// Loop to show player teams
+	for (var i = 0; i < home.length; i++) {
+		home[i].move();
+		home[i].display();
+	}
+	for (var j = 0; j < guest.length; j++) {
+		guest[j].walk();
+		guest[j].show();
+	}
+}
 }
 
 // Define the object for drawing audience.
