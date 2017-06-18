@@ -359,7 +359,6 @@ function draw() {
 		guest[j].show();
 	}
 }
-}
 
 // Define the object for drawing audience.
 function audience(ixp, iyp, iw, ih, id, it) {
