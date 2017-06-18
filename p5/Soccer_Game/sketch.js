@@ -23,7 +23,7 @@ var home = []; 	// Array to hold home team players
 var guest = [];	// Array to hold guest team players
 
 // A variable that will be used to switch between cards and the core game
-//var status = 0;
+var status = 0;
 
 // Faces of the audience
 var row1; // Row 1 audience
@@ -238,7 +238,7 @@ function scoreRecorder() {
 	}
 }
 
-/*function playTheGame() {
+function playTheGame() {
 	mySound.play();
 	background(0,123, 12); // Soccer field colour
 	// Arena field function call
@@ -329,10 +329,10 @@ function instructions() {
 	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 100) && (mouseY <= 200)) {
 		status = 1;
 	}
-}*/
+}
 
 function draw() {
-	/*if (status == 0) {
+	if (status == 0) {
 		mainTitleCard();
 	}
 	else if (status == 1) {
@@ -340,23 +340,6 @@ function draw() {
 	}
 	/else if (status == 2) {
 		instructions();
-	}*/
-	mySound.play();
-	background(0,123, 12); // Soccer field colour
-	// Arena field function call
-	arenaField();
-   	// Fans and Public function call
-	fansAndPublic();
-	// Function that records score
-	scoreRecorder();
-	// Loop to show player teams
-	for (var i = 0; i < home.length; i++) {
-		home[i].move();
-		home[i].display();
-	}
-	for (var j = 0; j < guest.length; j++) {
-		guest[j].walk();
-		guest[j].show();
 	}
 }
 
