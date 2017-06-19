@@ -259,7 +259,7 @@ function playTheGame() {
 }
 
 function mainTitleCard() {
-	//mySound.stop();
+	mySound.stop();
 	// Background of the main title card
 	background(0, 123, 12);
 	
@@ -384,7 +384,7 @@ function Home() {
 		if ((abs(centerX - this.x) <= 20) && (abs(centerY - this.y) <= 20)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
-			//mySound.stop();
+			mySound.stop();
 		}
 	};
 	
@@ -436,7 +436,7 @@ function Guest() {
 		if ((abs(centerX - this.x) <= 20) && (abs(centerY - this.y) <= 20)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
-			//mySound.stop();
+			mySound.stop();
 		}
 	};
 	
