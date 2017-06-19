@@ -324,12 +324,12 @@ function draw() {
 	/*if (testStatus == 0) {
 		mainTitleCard();
 	}*/
-	/*else*/ if (testStatus == 1) {
+	/*else if (testStatus == 1) {*/
 		playTheGame();
-	}
-	else if (testStatus == 2) {
+	//}
+	/*else if (testStatus == 2) {
 		instructions();
-	}
+	}*/
 }
 
 // Define the object for drawing audience.
