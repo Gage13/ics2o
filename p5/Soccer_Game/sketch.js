@@ -22,7 +22,7 @@ var home = []; 	// Array to hold home team players
 var guest = [];	// Array to hold guest team players
 
 // A variable that will be used to switch between cards and the core game
-var testStatus = 1;
+var testStatus = 0;
 
 // Faces of the audience
 var row1; // Row 1 audience
