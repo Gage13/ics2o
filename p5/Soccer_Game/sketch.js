@@ -22,7 +22,7 @@ var home = []; 	// Array to hold home team players
 var guest = [];	// Array to hold guest team players
 
 // A variable that will be used to switch between cards and the core game
-var testStatus = 0;
+var testStatus = 1;
 
 // Faces of the audience
 var row1; // Row 1 audience
@@ -249,7 +249,7 @@ function playTheGame() {
 	}
 }
 
-function mainTitleCard() {
+/*function mainTitleCard() {
 	// Background of the main title card
 	background(0, 123, 12);
 	
@@ -283,7 +283,7 @@ function mainTitleCard() {
 	if (mouseIsPressed && (mouseX >= 750) && (mouseX <= 1240) && (mouseY >= 300) && (mouseY <= 500)) {
 		testStatus = 2;
 	}
-}
+}*/
 
 function instructions() {
 	background(0, 123, 12);	// Background
@@ -321,9 +321,9 @@ function instructions() {
 }
 
 function draw() {
-	if (testStatus == 0) {
+	/*if (testStatus == 0) {
 		mainTitleCard();
-	}
+	}*/
 	else if (testStatus == 1) {
 		playTheGame();
 	}
