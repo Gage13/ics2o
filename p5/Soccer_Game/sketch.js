@@ -230,7 +230,6 @@ function scoreRecorder() {
 }
 
 function playTheGame() {
-	mySound.play();
 	background(0,123, 12); // Soccer field colour
 	// Arena field function call
 	arenaField();
@@ -373,7 +372,6 @@ function Home() {
 		if ((abs(centerX - this.x) <= 20) && (abs(centerY - this.y) <= 20)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
-			mySound.stop();
 		}
 	};
 	
@@ -425,7 +423,6 @@ function Guest() {
 		if ((abs(centerX - this.x) <= 20) && (abs(centerY - this.y) <= 20)) {
 			velocityX = -velocityX;
 			velocityY = velocityY;
-			mySound.stop();
 		}
 	};
 	
