@@ -7,8 +7,8 @@ var scoreA = 0; // Initial home team score
 var scoreB = 0; // Initial guest team score
 
 // Sound and image variables
-/*var mySound; // Create sound variable (spectators' cheers)
-var imageBall;*/
+var mySound; // Create sound variable (spectators' cheers)
+var imageBall;
 
 // Position and speed variables
 var centerX = 70; // Soccer Ball Initial Position X
@@ -33,15 +33,15 @@ var row4; // Row 4 audience
 var row5; // Row 5 audience
 var row6; // Row 6 audience
 
-/*function preload() {
+function preload() {
 	mySound = loadSound("Soccer Cheering.wav"); 
-}*/
+}
 
 function setup() {
 	var myCanvas = createCanvas(1350, 680); // Canvas
 	myCanvas.parent("SoccerGame"); // Position on the webpage
-	/*mySound.play();
-	mySound.setVolume(0.1);*/
+	mySound.play();
+	mySound.setVolume(0.1);
 	  
 	row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
 	row2 = new audience(18, 50, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 2.
@@ -58,8 +58,8 @@ function setup() {
 		guest.push(new Guest());
 	}
 	
-	/* Load image
-	imageBall = loadImage("soccer-ball.gif");*/
+	// Load image
+	imageBall = loadImage("soccer-ball.gif");
 }
 
 function arenaField() {
@@ -160,7 +160,7 @@ function arenaField() {
 	}
   
 	// Display he soccer ball.
-	//image(imageBall, centerX, centerY, 40, 40);
+	image(imageBall, centerX, centerY, 40, 40);
 	
 	// Score Clock
 	fill(255, 0, 0); // Text colour
@@ -208,7 +208,7 @@ function scoreRecorder() {
 		scoreA++;
 		centerX = 70;
 		centerY = 120;
-		//mySound.play();
+		mySound.play();
 	}
 
 	//If home team scores 10 goals
@@ -225,7 +225,7 @@ function scoreRecorder() {
 		scoreB++;
 		centerX = 1289;
 		centerY = 120; 
-		//mySound.play();
+		mySound.play();
 	}
   
 	// If guest team scores 10 goals
@@ -296,7 +296,7 @@ function mainTitleCard() {
 }
 
 function instructions() {
-	//mySound.stop();
+	mySound.stop();
 	background(0, 123, 12);	// Background
 	// Text properties and the script
 	fill(255);	// White text
