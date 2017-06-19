@@ -23,7 +23,7 @@ var home = []; 	// Array to hold home team players
 var guest = [];	// Array to hold guest team players
 
 // A variable that will be used to switch between cards and the core game
-var status = 0;
+var testStatus = 0;
 
 // Faces of the audience
 var row1; // Row 1 audience
@@ -287,11 +287,11 @@ function mainTitleCard() {
 	text("Instructions", 770, 425);	// "Instructions" text
 	
 	if (mouseIsPressed && (mouseX >= 100) && (mouseX <= 590) && (mouseY >= 300) && (mouseY <= 500)) {
-		status = 1;
+		testStatus = 1;
 	}
 	
 	if (mouseIsPressed && (mouseX >= 750) && (mouseX <= 1240) && (mouseY >= 300) && (mouseY <= 500)) {
-		status = 2;
+		testStatus = 2;
 	}
 }
 
@@ -323,22 +323,22 @@ function instructions() {
 	text("Play", 820, 170);
 	
 	if (mouseIsPressed && (mouseX >= 250) && (mouseX <= 550) && (mouseY >= 100) && (mouseY <= 200)) {
-		status = 0;
+		testStatus = 0;
 	}
 	
 	if (mouseIsPressed && (mouseX >= 800) && (mouseX <= 1100) && (mouseY >= 100) && (mouseY <= 200)) {
-		status = 1;
+		testStatus = 1;
 	}
 }
 
 function draw() {
-	if (status == 0) {
+	if (testStatus == 0) {
 		mainTitleCard();
 	}
-	else if (status == 1) {
+	else if (testStatus == 1) {
 		playTheGame();
 	}
-	else if (status == 2) {
+	else if (testStatus == 2) {
 		instructions();
 	}
 }
