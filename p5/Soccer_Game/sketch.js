@@ -249,7 +249,7 @@ function playTheGame() {
 	}
 }
 
-/*function mainTitleCard() {
+function mainTitleCard() {
 	// Background of the main title card
 	background(0, 123, 12);
 	
@@ -283,7 +283,7 @@ function playTheGame() {
 	if (mouseIsPressed && (mouseX >= 750) && (mouseX <= 1240) && (mouseY >= 300) && (mouseY <= 500)) {
 		testStatus = 2;
 	}
-}*/
+}
 
 function instructions() {
 	background(0, 123, 12);	// Background
@@ -321,15 +321,15 @@ function instructions() {
 }
 
 function draw() {
-	/*if (testStatus == 0) {
+	if (testStatus == 0) {
 		mainTitleCard();
-	}*/
-	/*else if (testStatus == 1) {*/
+	}
+	else if (testStatus == 1) {
 		playTheGame();
-	//}
-	/*else if (testStatus == 2) {
+	}
+	else if (testStatus == 2) {
 		instructions();
-	}*/
+	}
 }
 
 // Define the object for drawing audience.
