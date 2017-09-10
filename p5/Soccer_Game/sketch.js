@@ -36,12 +36,18 @@ function setup() {
 	var myCanvas = createCanvas(1350, 680); // Canvas
 	myCanvas.parent("SoccerGame"); // Position on the webpage
 	  
-	row1 = new audience(18, 20, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
-	row2 = new audience(18, 50, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 2.
-	row3 = new audience(18, 80, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 3.
-	row4 = new audience(18, 605, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 4.
-	row5 = new audience(18, 635, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 5.
-	row6 = new audience(18, 666, 10, 20, 20, 45); // (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
+	row1 = new audience(18, 20, 10, 20, 20, 45); 
+	// (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 1.
+	row2 = new audience(18, 50, 10, 20, 20, 45); 
+	// (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 2.
+	row3 = new audience(18, 80, 10, 20, 20, 45); 
+	// (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 3.
+	row4 = new audience(18, 605, 10, 20, 20, 45); 
+	// (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 4.
+	row5 = new audience(18, 635, 10, 20, 20, 45); 
+	// (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 5.
+	row6 = new audience(18, 666, 10, 20, 20, 45); 
+	// (1-4) Graphic details of the audience's heads; (5-6) Distance between heads' centres and number of heads for row 6.
 	
 	// Make 7 players per team
 	for (var i = 0; i < 7; i++) {
